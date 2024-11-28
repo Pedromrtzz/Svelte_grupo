@@ -60,16 +60,24 @@
     table {
         width: 100%;
         border-collapse: collapse;
-    }
-
-    th, td {
-        padding: 8px;
-        border: 1px solid #ddd;
-        text-align: left;
+        border: 1px solid rgb(85, 84, 85);
     }
 
     th {
-        background-color: #f2f2f2;
+        padding: 8px;
+        border: 1px solid rgb(85, 84, 85);
+        text-align: left;
+    }
+
+    td {
+        padding: 8px;
+        color: rgb(210, 156, 231);
+        text-align: left;
+        border: 1px solid rgb(85, 84, 85);
+    }
+
+    th {
+        background-color: rgb(210, 156, 231);
     }
 </style>
 
