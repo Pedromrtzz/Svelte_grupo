@@ -119,6 +119,7 @@
         margin-bottom: 5px;
         margin-top: 2.5%;
         font-weight: bold;
+        text-align: start;
         color: #8e44ad; /* Lila más oscuro */
     }
 
