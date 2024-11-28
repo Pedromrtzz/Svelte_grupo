@@ -7,7 +7,7 @@
 </script>
 
 <main>
-<Pedidos />
+<Formulario />
 </main>
 
 <style>

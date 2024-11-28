@@ -92,6 +92,7 @@
         <a href="#">Pedidos</a>
         <a href="#">Stock</a>
         <a href="#">Inventario</a>
+        
     </div>
 
 </div>
@@ -109,6 +110,7 @@
                     <th>Apellidos</th>
                     <th>Correo</th>
                     <th>Producto</th>
+                    <th>Cantidad</th>
                 </tr>
             </thead>
             <tbody>
@@ -118,6 +120,7 @@
                         <td>{pedido.apellidos}</td>
                         <td>{pedido.correo}</td>
                         <td>{pedido.producto}</td>
+                        <td>{pedido.cantidad}</td>
                     </tr>
                 {/each}
             </tbody>

@@ -29,10 +29,10 @@ db.connect((err) => {
 
 // Ruta para guardar pedidos
 app.post('/api/pedidos', (req, res) => {
-    const { nombre, apellidos, correo, producto } = req.body;
+    const { nombre, apellidos, correo, producto, cantidad } = req.body;
 
-    const sql = 'INSERT INTO pedidos (nombre, apellidos, correo, producto) VALUES (?, ?, ?, ?)';
-    db.query(sql, [nombre, apellidos, correo, producto], (err, result) => {
+    const sql = 'INSERT INTO pedidos (nombre, apellidos, correo, producto, cantidad) VALUES (?, ?, ?, ?, ?)';
+    db.query(sql, [nombre, apellidos, correo, producto, cantidad], (err, result) => {
         if (err) {
             console.error('Error ejecutando la consulta:', err);
             res.status(500).send('Error al guardar el pedido');
@@ -41,6 +41,7 @@ app.post('/api/pedidos', (req, res) => {
         res.status(200).send('Pedido guardado exitosamente');
     });
 });
+
 
 // Ruta para obtener pedidos
 app.get('/api/pedidos', (req, res) => {
