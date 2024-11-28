@@ -1,50 +1,56 @@
 <script>
+    // Se definen variables vacías que van a almacenar los valores de los campos del formulario
     let nombre = '';
     let apellido = '';
     let correo = '';
-    let producto = 'pantalon'; // Valor inicial del select
+    let producto = 'pantalon'; // Valor inicial del select (por defecto será 'pantalon')
 
+    // Función asincrónica que se ejecuta al enviar el formulario
     async function enviarPedido() {
-    // Captura los elementos del formulario
-    const nombreElement = document.getElementById('nombre');
-    const apellidoElement = document.getElementById('apellido');
-    const correoElement = document.getElementById('correo');
-    const productoElement = document.getElementById('productos');
+        // Captura los elementos del formulario mediante sus identificadores
+        const nombreElement = document.getElementById('nombre');
+        const apellidoElement = document.getElementById('apellido');
+        const correoElement = document.getElementById('correo');
+        const productoElement = document.getElementById('productos');
 
-    // Verifica que los elementos sean del tipo esperado antes de acceder a .value
-    const nombre = nombreElement instanceof HTMLInputElement ? nombreElement.value : '';
-    const apellido = apellidoElement instanceof HTMLInputElement ? apellidoElement.value : '';
-    const correo = correoElement instanceof HTMLInputElement ? correoElement.value : '';
-    const producto = productoElement instanceof HTMLSelectElement ? productoElement.value : 'pantalon'; // Valor inicial
+        // Verifica que los elementos sean del tipo esperado (HTMLInputElement o HTMLSelectElement) 
+        // antes de acceder a su propiedad .value para evitar errores en caso de que los elementos no existan
+        const nombre = nombreElement instanceof HTMLInputElement ? nombreElement.value : '';
+        const apellido = apellidoElement instanceof HTMLInputElement ? apellidoElement.value : '';
+        const correo = correoElement instanceof HTMLInputElement ? correoElement.value : '';
+        const producto = productoElement instanceof HTMLSelectElement ? productoElement.value : 'pantalon'; // Valor predeterminado
 
-    const pedido = { nombre, apellidos: apellido, correo, producto };
+        // Se crea un objeto con los datos obtenidos del formulario
+        const pedido = { nombre, apellidos: apellido, correo, producto };
 
-    try {
-        const respuesta = await fetch('http://localhost:3000/api/pedidos', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(pedido),
-        });
+        try {
+            // Se hace una petición POST a la API 'http://localhost:3000/api/pedidos' para enviar el pedido
+            const respuesta = await fetch('http://localhost:3000/api/pedidos', {
+                method: 'POST', // Método HTTP POST
+                headers: {
+                    'Content-Type': 'application/json', // Indica que se enviarán datos en formato JSON
+                },
+                body: JSON.stringify(pedido), // Convierte el objeto 'pedido' a una cadena JSON
+            });
 
-        if (respuesta.ok) {
-            alert('Pedido realizado con éxito');
-            // Reinicia el formulario
-            if (nombreElement instanceof HTMLInputElement) nombreElement.value = '';
-            if (apellidoElement instanceof HTMLInputElement) apellidoElement.value = '';
-            if (correoElement instanceof HTMLInputElement) correoElement.value = '';
-            if (productoElement instanceof HTMLSelectElement) productoElement.value = 'pantalon'; // Valor inicial
-        } else {
-            alert('Error al realizar el pedido');
+            // Si la respuesta del servidor es satisfactoria, muestra un mensaje de éxito y reinicia el formulario
+            if (respuesta.ok) {
+                alert('Pedido realizado con éxito');
+                // Reinicia los campos del formulario
+                if (nombreElement instanceof HTMLInputElement) nombreElement.value = '';
+                if (apellidoElement instanceof HTMLInputElement) apellidoElement.value = '';
+                if (correoElement instanceof HTMLInputElement) correoElement.value = '';
+                if (productoElement instanceof HTMLSelectElement) productoElement.value = 'pantalon'; // Vuelve a establecer el valor por defecto
+            } else {
+                // Si la respuesta no es satisfactoria, muestra un mensaje de error
+                alert('Error al realizar el pedido');
+            }
+        } catch (error) {
+            // Si ocurre un error en la conexión con el servidor, lo captura y muestra un mensaje de error
+            console.error('Error:', error);
+            alert('Error al conectar con el servidor');
         }
-    } catch (error) {
-        console.error('Error:', error);
-        alert('Error al conectar con el servidor');
     }
-}
-
-
 
 </script>
 

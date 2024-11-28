@@ -3,10 +3,11 @@
   import viteLogo from '/vite.svg'
   import Counter from './lib/Counter.svelte'
   import Formulario from './lib/Formulario.svelte';
+  import Pedidos from './lib/Pedidos.svelte';
 </script>
 
 <main>
-<Formulario />
+<Pedidos />
 </main>
 
 <style>
