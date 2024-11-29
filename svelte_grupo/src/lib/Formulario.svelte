@@ -3,7 +3,7 @@
     let nombre = '';
     let apellido = '';
     let correo = '';
-    let producto = 'pantalon'; // Valor inicial del select (por defecto será 'pantalon')
+    let producto = 'Pantalon Slim Fit'; // Valor inicial del select (por defecto será 'pantalon')
 
     // Función asincrónica que se ejecuta al enviar el formulario
     async function enviarPedido() {
@@ -18,7 +18,7 @@
     const nombre = nombreElement instanceof HTMLInputElement ? nombreElement.value : '';
     const apellido = apellidoElement instanceof HTMLInputElement ? apellidoElement.value : '';
     const correo = correoElement instanceof HTMLInputElement ? correoElement.value : '';
-    const producto = productoElement instanceof HTMLSelectElement ? productoElement.value : 'pantalon';
+    const producto = productoElement instanceof HTMLSelectElement ? productoElement.value : 'Pantalon Slim Fit';
     const cantidad = cantidadElement instanceof HTMLInputElement ? parseInt(cantidadElement.value, 10) : 1; // Convertir a entero
 
     // Se crea un objeto con los datos obtenidos del formulario
@@ -47,7 +47,7 @@
             if (nombreElement instanceof HTMLInputElement) nombreElement.value = '';
             if (apellidoElement instanceof HTMLInputElement) apellidoElement.value = '';
             if (correoElement instanceof HTMLInputElement) correoElement.value = '';
-            if (productoElement instanceof HTMLSelectElement) productoElement.value = 'pantalon';
+            if (productoElement instanceof HTMLSelectElement) productoElement.value = 'Pantalon Slim Fit';
             if (cantidadElement instanceof HTMLInputElement) cantidadElement.value = '1';
         } else {
             alert('Error al realizar el pedido');
@@ -194,9 +194,9 @@
         <!--Apellidos-->
         <label for="productos">Productos</label>
         <select name="productos" id="productos">
-            <option value="pantalon">Pantalon</option>
-            <option value="camiseta">Camiseta</option>
-            <option value="sudadera">Sudadera</option>
+            <option value="Pantalon Slim Fit">Pantalon Slim Fit</option>
+            <option value="Camiseta Basica">Camiseta Basica</option>
+            <option value="Sudadera con Capucha">Sudadera con Capucha</option>
         </select>
 
         <!-- Cantidad -->

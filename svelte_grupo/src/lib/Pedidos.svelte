@@ -63,6 +63,10 @@
         border: 1px solid rgb(85, 84, 85);
     }
 
+    .contenedor-pedidos h1 {
+        color: #9b59b6;
+    }
+
     th {
         padding: 8px;
         border: 1px solid rgb(85, 84, 85);
