@@ -4,10 +4,12 @@
   import Counter from './lib/Counter.svelte'
   import Formulario from './lib/Formulario.svelte';
   import Pedidos from './lib/Pedidos.svelte';
+  import Stock from './lib/Stock.svelte';
+  import Inventario from './lib/Inventario.svelte';
 </script>
 
 <main>
-<Formulario />
+<Inventario />
 </main>
 
 <style>
