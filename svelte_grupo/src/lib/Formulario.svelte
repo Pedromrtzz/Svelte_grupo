@@ -64,10 +64,7 @@
 
 <style>
 
-    body {
-        margin: 0; /* Elimina los márgenes para que la barra ocupe todo el ancho */
-        font-family: Arial, sans-serif;
-    }
+
 
     .navbar {
         position: fixed;
@@ -107,7 +104,7 @@
 
     .contenedor-formulario {
         max-width: 600px;
-        margin: 100px auto 0; /* Añade un margen superior para evitar que el contenido se superponga con la barra */
+        margin: 100px auto -1; /* Añade un margen superior para evitar que el contenido se superponga con la barra */
         padding: 20px;
     }
 
