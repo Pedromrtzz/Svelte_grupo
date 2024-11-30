@@ -9,7 +9,7 @@
 </script>
 
 <main>
-<Pedidos />
+<Inventario />
 </main>
 
 <style>
