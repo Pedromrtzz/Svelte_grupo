@@ -9,7 +9,11 @@
 </script>
 
 <main>
+<<<<<<< HEAD
 <Formulario />
+=======
+<Inventario />
+>>>>>>> beatr
 </main>
 
 <style>

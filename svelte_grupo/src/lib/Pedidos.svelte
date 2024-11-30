@@ -26,12 +26,12 @@
 </script>
 
 <style>
-        .navbar {
+    .navbar {
         position: fixed;
         top: 0%;
         left: 0%;
         width: 100%;
-        background-color: rgb(210, 156, 231);
+        background-color: #E63946; 
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -42,7 +42,7 @@
         color: white;
         text-decoration: none;
         margin-left: 30%;
-        border: 2px solid rgb(210, 156, 231);
+        border: 2px solid #E63946; 
         width: 98%;
         font-size: large;
     }
@@ -55,34 +55,55 @@
 
     .navbar .navegacion a:hover {
         text-decoration: underline;
+        color: #FFBE0B;
     }
 
     table {
-        width: 100%;
-        border-collapse: collapse;
-        border: 1px solid rgb(85, 84, 85);
-    }
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #9AE3D1; /* Borde en color suave */
+  }
 
-    .contenedor-pedidos h1 {
-        color: #9b59b6;
-    }
+  th, td {
+    padding: 8px;
+    border: 1px solid #9AE3D1; /* Borde suave para celdas */
+    text-align: left;
+  }
 
-    th {
-        padding: 8px;
-        border: 1px solid rgb(85, 84, 85);
-        text-align: left;
-    }
+  th {
+    background-color: #9AE3D1; /* Fondo suave para los encabezados */
+    color: white;
+  }
 
-    td {
-        padding: 8px;
-        color: rgb(210, 156, 231);
-        text-align: left;
-        border: 1px solid rgb(85, 84, 85);
-    }
+  td {
+    color: #333333; /* Texto de las celdas en color gris oscuro */
+  }
 
-    th {
-        background-color: rgb(210, 156, 231);
-    }
+  /* Fila alternada (impares) con color claro */
+  tr:nth-child(even) {
+    background-color: #F4F4F4; /* Fondo gris suave para filas pares */
+  }
+
+  /* Hover sobre las filas */
+  tr:hover {
+    background-color: #FFDD7F; /* Amarillo suave al pasar el mouse */
+    color: #333333; /* Aseguramos que el texto sea oscuro al pasar el mouse */
+  }
+
+  /* Botones */
+  button {
+    padding: 5px 10px;
+    margin: 5px;
+    cursor: pointer;
+    border: none;
+    background-color: #FF5E5B; /* Rojo navideño */
+    color: white;
+    border-radius: 5px;
+  }
+
+  button:hover {
+    background-color: #D13C5C; /* Rojo más oscuro en hover */
+  }
 </style>
 
 <div class="navbar">
