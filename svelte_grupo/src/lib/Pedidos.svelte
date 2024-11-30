@@ -26,12 +26,12 @@
 </script>
 
 <style>
-        .navbar {
+    .navbar {
         position: fixed;
         top: 0%;
         left: 0%;
         width: 100%;
-        background-color: rgb(210, 156, 231);
+        background-color: #E63946; 
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -42,7 +42,7 @@
         color: white;
         text-decoration: none;
         margin-left: 30%;
-        border: 2px solid rgb(210, 156, 231);
+        border: 2px solid #E63946; 
         width: 98%;
         font-size: large;
     }
@@ -55,34 +55,51 @@
 
     .navbar .navegacion a:hover {
         text-decoration: underline;
+        color: #FFBE0B;
     }
 
     table {
         width: 100%;
         border-collapse: collapse;
-        border: 1px solid rgb(85, 84, 85);
+        border: 1px solid #9AE3D1; 
     }
 
+
     .contenedor-pedidos h1 {
-        color: #9b59b6;
+        color: #E63946;
     }
 
     th {
         padding: 8px;
-        border: 1px solid rgb(85, 84, 85);
+        border: 1px solid #9AE3D1; 
         text-align: left;
+        background-color: #9AE3D1; 
+        color: white;
     }
 
     td {
         padding: 8px;
-        color: rgb(210, 156, 231);
+        color: #333333; 
         text-align: left;
-        border: 1px solid rgb(85, 84, 85);
+        border: 1px solid #9AE3D1; 
     }
+    tr:nth-child(even) {
+  background-color: #F4F4F4;
+}
 
-    th {
-        background-color: rgb(210, 156, 231);
-    }
+tr:hover {
+  background-color: #FFDD7F; 
+  color: #333333;
+}
+
+
+
+.no-pedidos {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #9AE3D1; 
+}
+    
 </style>
 
 <div class="navbar">

@@ -9,7 +9,7 @@
 </script>
 
 <main>
-<Stock />
+<Pedidos />
 </main>
 
 <style>
