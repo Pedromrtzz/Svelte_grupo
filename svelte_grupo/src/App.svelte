@@ -9,7 +9,7 @@
 </script>
 
 <main>
-<Inventario />
+<Stock />
 </main>
 
 <style>

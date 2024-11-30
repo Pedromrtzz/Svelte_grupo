@@ -195,8 +195,11 @@
         <label for="productos">Productos</label>
         <select name="productos" id="productos">
             <option value="Pantalon Slim Fit">Pantalon Slim Fit</option>
+            <option value="Pantalon Jogger">Pantalon Jogger</option>
             <option value="Camiseta Basica">Camiseta Basica</option>
+            <option value="Camiseta Grafica">Camiseta Gráfica</option>
             <option value="Sudadera con Capucha">Sudadera con Capucha</option>
+            <option value="Sudadera Oversize">Sudadera Oversize</option>
         </select>
 
         <!-- Cantidad -->
