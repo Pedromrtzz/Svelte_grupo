@@ -9,7 +9,7 @@
 </script>
 
 <main>
-<Inventario />
+<Formulario />
 </main>
 
 <style>

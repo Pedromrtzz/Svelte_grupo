@@ -70,7 +70,7 @@
       top: 0;
       left: 0;
       width: 100%;
-      background-color: rgb(210, 156, 231);
+      background-color: #9AE3D1;
       display: flex;
       justify-content: space-between;
       align-items: center;

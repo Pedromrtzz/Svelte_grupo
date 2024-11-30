@@ -178,35 +178,36 @@
     </div>
 
     <div class="formulario">
-         
-        <!--Nombre-->
-        <label for="name">Nombre</label>
-        <input type="text" id="nombre" placeholder="Ingresa tu nombre">
-
-        <!--Apellidos-->
-        <label for="subname">Apellidos</label>
-        <input type="text" id="apellido" placeholder="Ingresa tus apellidos">
-
-        <!--Apellidos-->
-        <label for="email">Correo</label>
-        <input type="email" id="correo" placeholder="Ingresa tu correo">
-
-        <!--Apellidos-->
-        <label for="productos">Productos</label>
-        <select name="productos" id="productos">
-            <option value="Pantalon Slim Fit">Pantalon Slim Fit</option>
-            <option value="Camiseta Basica">Camiseta Basica</option>
-            <option value="Sudadera con Capucha">Sudadera con Capucha</option>
-        </select>
-
-        <!-- Cantidad -->
-        <label for="cantidad">Cantidad</label>
-        <input type="number" id="cantidad" min="1" value="1" placeholder="Ingresa la cantidad">
-
-
-        <!-- Botón de envío -->
-            <button type="button" on:click={enviarPedido}>Realizar Pedido</button>
+        <form onsubmit={enviarPedido}>
+            <!-- Nombre -->
+            <label for="name">Nombre</label>
+            <input type="text" id="nombre" placeholder="Ingresa tu nombre" required>
+    
+            <!-- Apellidos -->
+            <label for="subname">Apellidos</label>
+            <input type="text" id="apellido" placeholder="Ingresa tus apellidos" required>
+    
+            <!-- Correo -->
+            <label for="email">Correo</label>
+            <input type="email" id="correo" placeholder="Ingresa tu correo" required>
+    
+            <!-- Productos -->
+            <label for="productos">Productos</label>
+            <select name="productos" id="productos" required>
+                <option value="Pantalon Slim Fit">Pantalon Slim Fit</option>
+                <option value="Camiseta Basica">Camiseta Basica</option>
+                <option value="Sudadera con Capucha">Sudadera con Capucha</option>
+            </select>
+    
+            <!-- Cantidad -->
+            <label for="cantidad">Cantidad</label>
+            <input type="number" id="cantidad" min="1" value="1" placeholder="Ingresa la cantidad" required>
+    
+            <!-- Botón de envío -->
+            <button type="submit">Realizar Pedido</button>
+        </form>
     </div>
+    
 
 
 </div>
