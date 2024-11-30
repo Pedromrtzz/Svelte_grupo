@@ -199,13 +199,13 @@
     margin: 5px;
     cursor: pointer;
     border: none;
-    background-color: #FF5E5B; /* Rojo navideño */
+    background-color: #84DCC6; /* Verde navideño */
     color: white;
     border-radius: 5px;
   }
 
   button:hover {
-    background-color: #D13C5C; /* Rojo más oscuro en hover */
+    background-color: #66B8A3; /* Verde más oscuro en hover */
   }
 >>>>>>> beatr
   </style>
