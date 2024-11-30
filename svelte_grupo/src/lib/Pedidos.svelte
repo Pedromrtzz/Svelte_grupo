@@ -59,51 +59,43 @@
     }
 
     table {
-    width: 100%;
-    border-collapse: collapse;
-    border: 1px solid #9AE3D1; /* Borde en color suave */
-  }
+        width: 100%;
+        border-collapse: collapse;
+        border: 1px solid #9AE3D1; 
+    }
 
-  th, td {
-    padding: 8px;
-    border: 1px solid #9AE3D1; /* Borde suave para celdas */
-    text-align: left;
-  }
 
-  th {
-    background-color: #9AE3D1; /* Fondo suave para los encabezados */
-    color: white;
-  }
+    .contenedor-pedidos h1 {
+        color: #E63946;
+    }
 
-  td {
-    color: #333333; /* Texto de las celdas en color gris oscuro */
-  }
+    th {
+        padding: 8px;
+        border: 1px solid #9AE3D1; 
+        text-align: left;
+        background-color: #9AE3D1; 
+        color: white;
+    }
 
-  /* Fila alternada (impares) con color claro */
-  tr:nth-child(even) {
-    background-color: #F4F4F4; /* Fondo gris suave para filas pares */
-  }
+    td {
+        padding: 8px;
+        color: #333333; 
+        text-align: left;
+        border: 1px solid #9AE3D1; 
+    }
+    tr:nth-child(even) {
+        background-color: #F4F4F4;
+    }
 
-  /* Hover sobre las filas */
-  tr:hover {
-    background-color: #FFDD7F; /* Amarillo suave al pasar el mouse */
-    color: #333333; /* Aseguramos que el texto sea oscuro al pasar el mouse */
-  }
+tr:hover {
+  background-color: #FFDD7F; 
+  color: #333333;
+}
 
-  /* Botones */
-  button {
-    padding: 5px 10px;
-    margin: 5px;
-    cursor: pointer;
-    border: none;
-    background-color: #FF5E5B; /* Rojo navideño */
-    color: white;
-    border-radius: 5px;
-  }
 
-  button:hover {
-    background-color: #D13C5C; /* Rojo más oscuro en hover */
-  }
+
+
+    
 </style>
 
 <div class="navbar">
