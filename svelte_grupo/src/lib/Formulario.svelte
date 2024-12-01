@@ -71,7 +71,7 @@
         top: 0%;
         left: 0%;
         width: 100%;
-        background-color: rgb(210, 156, 231);
+        background-color: #FF5E5B;
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -82,7 +82,7 @@
         color: white;
         text-decoration: none;
         margin-left: 30%;
-        border: 2px solid rgb(210, 156, 231);
+        border: 2px solid #FF5E5B;
         width: 98%;
         font-size: large;
     }
@@ -95,6 +95,7 @@
 
     .navbar .navegacion a:hover {
         text-decoration: underline;
+        color: #84DCC6;
     }
 
     .contenedor-formulario .titulo-formulario h1 {
@@ -106,11 +107,15 @@
         max-width: 600px;
         margin: 100px auto -1; /* Añade un margen superior para evitar que el contenido se superponga con la barra */
         padding: 20px;
+        background-color: #F4F4F4; 
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
 
     h1 {
-        color: #9b59b6; /* Lila más fuerte */
+        color: #FF5E5B;
         text-align: center;
+        margin-bottom: 20px;
     }
 
     .formulario {
@@ -122,25 +127,25 @@
         margin-bottom: 5px;
         margin-top: 2.5%;
         font-weight: bold;
-        color: #8e44ad; /* Lila más oscuro */
+        color: #166534; 
+    
     }
 
-    .formulario input{
+    .formulario input, .formulario select {
         width: 100%;
         padding: 8px;
         border: 1px solid #ddd;
         border-radius: 4px;
     }
 
-    .formulario select {
-        width: 100%;
-        padding: 8px;
-        border: 1px solid #ddd;
-        border-radius: 4px;
+    .formulario input:focus, .formulario select:focus {
+        outline: none;
+        border-color: #84DCC6; 
+        box-shadow: 0 0 5px #84DCC6;
     }
 
     button {
-        background-color: #b19cd9; /* Lila claro */
+        background-color: #84DCC6;
         color: white;
         padding: 10px 15px;
         border: none;
@@ -151,7 +156,7 @@
     }
 
     button:hover {
-      background-color: #9b59b6; /* Lila más fuerte */
+      background-color: #66B8A3; 
     }
 
 </style>
