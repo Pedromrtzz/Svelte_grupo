@@ -105,7 +105,7 @@
 
     .contenedor-formulario {
         max-width: 600px;
-        margin: 100px auto -1; /* Añade un margen superior para evitar que el contenido se superponga con la barra */
+        margin-top: 13%;
         padding: 20px;
         background-color: #F4F4F4; 
         border-radius: 8px;
