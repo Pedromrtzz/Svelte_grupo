@@ -63,86 +63,153 @@
     };
   </script>
   
+  <!-- <style>
+    /* Navbar */
+    .navbar {
+
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: #9AE3D1;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+      padding: 10px 20px;
+    }
+  
+    .navbar .titulo-barra p {
+      color: white;
+      text-decoration: none;
+      font-size: large;
+    }
+  
+    .navbar .navegacion a {
+      text-decoration: none;
+      color: white;
+      margin: 0 20px;
+    }
+  
+    .navbar .navegacion a:hover {
+      text-decoration: underline;
+    }
+  
+    /* Tabla */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 70px; /* Para que no quede debajo de la navbar fija */
+    }
+  
+    th, td {
+      border: 1px solid #d0a6f4;
+      padding: 12px;
+      text-align: center;
+    }
+  
+    th {
+      background-color: #d0a6f4;
+      color: white;
+    }
+  
+    td {
+      color: black;
+    }
+  
+    button {
+      padding: 5px 10px;
+      margin: 5px;
+      cursor: pointer;
+      border: none;
+      background-color: #d0a6f4;
+      color: white;
+      border-radius: 5px;
+    }
+  
+    button:hover {
+      background-color: #b080c6;
+    }
+
+  </style> -->
   <style>
     /* Navbar */
     .navbar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background-color: #FF5E5B; /* Rojo navideño */
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    z-index: 1000;
-    padding: 10px 20px;
-  }
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: #FF5E5B;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+      padding: 10px 20px;
+    }
 
-  .navbar .titulo-barra p {
-    color: white;
-    text-decoration: none;
-    font-size: large;
-  }
+    .navbar .titulo-barra p {
+      color: white;
+      text-decoration: none;
+      font-size: large;
+    }
 
-  .navbar .navegacion a {
-    text-decoration: none;
-    color: white;
-    margin: 0 20px;
-  }
+    .navbar .navegacion a {
+      text-decoration: none;
+      color: white;
+      margin: 0 20px;
+    }
 
-  .navbar .navegacion a:hover {
-    text-decoration: underline;
-    color: #84DCC6; /* Verde navideño al pasar el mouse */
-  }
+    .navbar .navegacion a:hover {
+      text-decoration: underline;
+    }
 
-  /* Tabla */
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    border: 1px solid #9AE3D1; /* Borde en color suave */
-  }
+    /* Tabla */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 70px; /*Para que no quede debajo de la navbar fija */
+    }
 
-  th, td {
-    padding: 8px;
-    border: 1px solid #9AE3D1; /* Borde suave para celdas */
-    text-align: left;
-  }
+    th {
+        padding: 8px;
+        border: 1px solid #9AE3D1; 
+        text-align: left;
+        background-color: #9AE3D1; 
+        color: white;
+    }
 
-  th {
-    background-color: #9AE3D1; /* Fondo suave para los encabezados */
-    color: white;
-  }
+    td {
+        padding: 8px;
+        color: #333333; 
+        text-align: left;
+        border: 1px solid #9AE3D1; 
+    }
+    tr:nth-child(even) {
+        background-color: #F4F4F4;
+    }
 
-  td {
-    color: #333333; /* Texto de las celdas en color gris oscuro */
-  }
+    tr:hover {
+        background-color: #FFDD7F; 
+        color: #333333;
+    }
 
-  /* Fila alternada (impares) con color claro */
-  tr:nth-child(even) {
-    background-color: #F4F4F4; /* Fondo gris suave para filas pares */
-  }
+    button {
+        background-color: #9AE3D1; 
+        color: #FFFFFF; 
+        border: none;
+        padding: 10px 15px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-weight: bold;
+        transition: background-color 0.3s, transform 0.2s;
+    }
 
-  /* Hover sobre las filas */
-  tr:hover {
-    background-color: #FFDD7F; /* Amarillo suave al pasar el mouse */
-    color: #333333; /* Aseguramos que el texto sea oscuro al pasar el mouse */
-  }
+    button:hover {
+        background-color: #E63946; 
+        transform: scale(1.05); 
+    }
+  </style> 
 
-  /* Botones */
-  button {
-    padding: 5px 10px;
-    margin: 5px;
-    cursor: pointer;
-    border: none;
-    background-color: #84DCC6; /* Verde navideño */
-    color: white;
-    border-radius: 5px;
-  }
-
-  button:hover {
-    background-color: #66B8A3; /* Verde más oscuro en hover */
-  }
-  </style>
   
   <div>
     <!-- Navbar -->

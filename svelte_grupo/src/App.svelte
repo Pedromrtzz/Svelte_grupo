@@ -9,7 +9,7 @@
 </script>
 
 <main>
-<Formulario />
+<Stock />
 </main>
 
 <style>
