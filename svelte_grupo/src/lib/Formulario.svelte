@@ -202,6 +202,15 @@
                 <option value="Pantalon Slim Fit">Pantalon Slim Fit</option>
                 <option value="Camiseta Basica">Camiseta Basica</option>
                 <option value="Sudadera con Capucha">Sudadera con Capucha</option>
+                <option value="Pantalón Jogger">Pantalón Jogger</option>
+                <option value="Camiseta Gráfica">Camiseta Gráfica</option>
+                <option value="Sudadera Oversize">Sudadera Oversize</option>
+                <option value="Zapatillas Running">Zapatillas Running</option>
+                <option value="Reloj Digital">Reloj Digital</option>
+                <option value="Mochila de Senderismo">Mochila de Senderismo</option>
+                <option value="Chaqueta Impermeable">Chaqueta Impermeable</option>
+                <option value="Auriculares Inalámbricos">Auriculares Inalámbricos</option>
+                <option value="Gafas de Sol UV400<">Gafas de Sol UV400</option>
             </select>
     
             <!-- Cantidad -->
