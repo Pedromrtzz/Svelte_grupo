@@ -57,10 +57,31 @@
         alert('Error al conectar con el servidor');
     }
 }
+document.addEventListener('DOMContentLoaded', function() {
+    // Obtener los elementos por su id
+    const iconoMenu = document.getElementById('icono-menu');
+    const iconoCerrar = document.getElementById('icono-cerrar');
+    const navegacion = document.getElementById('navegacion');
+
+    // Función para abrir el menú
+    iconoMenu.addEventListener('click', () => {
+        navegacion.style.display = 'flex';  // Mostrar la barra de navegación
+        iconoMenu.style.display = 'none';   // Ocultar el icono de abrir
+        iconoCerrar.style.display = 'block'; // Mostrar el icono de cerrar
+    });
+
+    // Función para cerrar el menú
+    iconoCerrar.addEventListener('click', () => {
+        navegacion.style.display = 'none';  // Ocultar la barra de navegación
+        iconoMenu.style.display = 'block';  // Mostrar el icono de abrir
+        iconoCerrar.style.display = 'none'; // Ocultar el icono de cerrar
+    });
+});
+
 
 </script>
 
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
 <style>
 
@@ -97,6 +118,87 @@
         text-decoration: underline;
         color: #84DCC6;
     }
+
+    .icono-menu{
+        display: none;
+    }
+    .icono-cerrar{
+        display: none;
+    }
+
+    @media (max-width: 768px) {
+    .navbar-contraido {
+        display: flex; /* Asegura que los elementos estén en fila */
+        flex-direction: row; /* Fila */
+        align-items: center; /* Alinea los elementos verticalmente en el centro */
+        justify-content: space-between; /* Asegura que el icono y el título estén separados */
+        width: 100%; /* Asegura que el contenedor ocupe todo el ancho */
+        padding: 10px; /* Espaciado alrededor */
+    }
+
+    .navbar {
+        display: flex; /* Cambiar la dirección a columna para apilar los elementos */
+        flex-direction: column; /* Los elementos dentro de .navbar estarán en columna */
+        align-items: center; /* Centra los elementos horizontalmente */
+        justify-content: flex-start; /* Asegura que los elementos estén alineados desde arriba */
+        width: 100%; /* Asegura que el menú ocupe todo el ancho */
+        padding: 10px;
+    }
+
+    .navbar .titulo-barra {
+        width: auto; /* El ancho del título se ajusta al contenido */
+        text-align: center; /* Centra el texto */
+        margin: 0;
+    }
+
+    .navbar .titulo-barra p {
+        margin: 0;
+        border: none;
+        font-size: large;
+    }
+
+    .navbar .navegacion {
+        display: none; /* Ocultar el menú inicialmente */
+        flex-direction: column; /* Los enlaces estarán en columna */
+        width: 100%;
+        text-align: center;
+        background-color: #FF5E5B;
+        padding: 10px 0;
+    }
+
+    .navbar .navegacion a {
+        display: block;
+        margin: 10px 0;
+        color: white;
+    }
+
+    .icono-menu {
+        display: block !important;
+        font-size: 24px;
+        width: 20px;
+        height: 20px;
+        color: white;
+        cursor: pointer;
+        z-index: 100;
+    }
+
+    .icono-cerrar {
+        display: none; /* El icono de cerrar está inicialmente oculto */
+        font-size: 24px;
+        color: white;
+        cursor: pointer;
+        margin-left: auto; /* Para mover el icono al extremo derecho */
+        margin-right: 40px; /* Asegura que esté a unos 20px del borde */
+    }
+
+    /* Mostrar la navegación cuando se le añade la clase 'visible' */
+    .navegacion.visible {
+        display: flex;
+    }
+}
+
+
+
 
     .contenedor-formulario .titulo-formulario h1 {
         margin-top: 10% ;
@@ -162,12 +264,21 @@
 </style>
 
 <div class="navbar">
-
+<div class="navbar-contraido">
+    <div class="icono-menu"  id="icono-menu">
+        <i class="fa fa-bars"></i> 
+    </div>
     <div class="titulo-barra">
         <p>Gestión de Inventario</p>
     </div>
+    
+</div>
+    <div class="icono-cerrar"  id="icono-cerrar" >
+        <i class="fa fa-times"></i> 
+    </div>
 
-    <div class="navegacion">
+    <div class="navegacion"id="navegacion">
+        
         <a href="#">Formulario Pedidos</a>
         <a href="#">Pedidos</a>
         <a href="#">Stock</a>
