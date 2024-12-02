@@ -66,7 +66,7 @@
   <style>
     /* Navbar */
     .navbar {
-<<<<<<< HEAD
+
       position: fixed;
       top: 0;
       left: 0;
@@ -130,84 +130,7 @@
     button:hover {
       background-color: #b080c6;
     }
-=======
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background-color: #FF5E5B; /* Rojo navideño */
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    z-index: 1000;
-    padding: 10px 20px;
-  }
 
-  .navbar .titulo-barra p {
-    color: white;
-    text-decoration: none;
-    font-size: large;
-  }
-
-  .navbar .navegacion a {
-    text-decoration: none;
-    color: white;
-    margin: 0 20px;
-  }
-
-  .navbar .navegacion a:hover {
-    text-decoration: underline;
-    color: #84DCC6; /* Verde navideño al pasar el mouse */
-  }
-
-  /* Tabla */
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    border: 1px solid #9AE3D1; /* Borde en color suave */
-  }
-
-  th, td {
-    padding: 8px;
-    border: 1px solid #9AE3D1; /* Borde suave para celdas */
-    text-align: left;
-  }
-
-  th {
-    background-color: #9AE3D1; /* Fondo suave para los encabezados */
-    color: white;
-  }
-
-  td {
-    color: #333333; /* Texto de las celdas en color gris oscuro */
-  }
-
-  /* Fila alternada (impares) con color claro */
-  tr:nth-child(even) {
-    background-color: #F4F4F4; /* Fondo gris suave para filas pares */
-  }
-
-  /* Hover sobre las filas */
-  tr:hover {
-    background-color: #FFDD7F; /* Amarillo suave al pasar el mouse */
-    color: #333333; /* Aseguramos que el texto sea oscuro al pasar el mouse */
-  }
-
-  /* Botones */
-  button {
-    padding: 5px 10px;
-    margin: 5px;
-    cursor: pointer;
-    border: none;
-    background-color: #84DCC6; /* Verde navideño */
-    color: white;
-    border-radius: 5px;
-  }
-
-  button:hover {
-    background-color: #66B8A3; /* Verde más oscuro en hover */
-  }
->>>>>>> beatr
   </style>
   
   <div>
