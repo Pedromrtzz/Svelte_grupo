@@ -36,7 +36,7 @@
       }
     };
 
-
+    //para el enrutado
     import { link } from "svelte-spa-router";
   </script>
   
