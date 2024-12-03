@@ -6,7 +6,7 @@ import Pedidos from "./lib/Pedidos.svelte";
 // Define las rutas como un objeto clave-valor
 const routes = {
     '/stock': Stock,       
-    '/formulario': Formulario,
+    '/': Formulario,
     '/inventario': Inventario,  
     '/pedidos': Pedidos,  
 };
