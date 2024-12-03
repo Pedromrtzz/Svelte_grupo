@@ -28,79 +28,8 @@
     import { link } from "svelte-spa-router";
 </script>
 
-<style>
-    .navbar {
-        position: fixed;
-        top: 0%;
-        left: 0%;
-        width: 100%;
-        background-color: #E63946; 
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        z-index: 1000;
-    }
 
-    .navbar .titulo-barra p {
-        color: white;
-        text-decoration: none;
-        margin-left: 30%;
-        border: 2px solid #E63946; 
-        width: 98%;
-        font-size: large;
-    }
-
-    .navbar .navegacion a {
-        text-decoration: none;
-        color: white;
-        margin: 0 20px;
-    }
-
-    .navbar .navegacion a:hover {
-        text-decoration: underline;
-        color: #FFBE0B;
-    }
-
-    table {
-        width: 100%;
-        border-collapse: collapse;
-        border: 1px solid #9AE3D1; 
-    }
-
-
-    .contenedor-pedidos h1 {
-        color: #E63946;
-    }
-
-    th {
-        padding: 8px;
-        border: 1px solid #9AE3D1; 
-        text-align: left;
-        background-color: #9AE3D1; 
-        color: white;
-    }
-
-    td {
-        padding: 8px;
-        color: #333333; 
-        text-align: left;
-        border: 1px solid #9AE3D1; 
-    }
-    tr:nth-child(even) {
-        background-color: #F4F4F4;
-    }
-
-tr:hover {
-  background-color: #FFDD7F; 
-  color: #333333;
-}
-
-
-
-
-    
-</style>
-
+<link rel="stylesheet" href="css/pedidos.css">
 <div class="navbar">
 
     <div class="titulo-barra">
