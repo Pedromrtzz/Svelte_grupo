@@ -109,7 +109,7 @@ document.addEventListener('DOMContentLoaded', function() {
     </div>
 
     <div class="navegacion">
-        <a href="/formulario" use:link>Formulario Pedidos</a>
+        <a href="/" use:link>Formulario Pedidos</a>
         <a href="/pedidos" use:link>Pedidos</a>
         <a href="/stock" use:link>Stock</a>
         <a href="/inventario" use:link>Inventario</a>
