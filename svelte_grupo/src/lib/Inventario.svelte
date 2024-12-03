@@ -61,77 +61,15 @@
         console.error('Error al obtener productos');
       }
     };
+
+
+    //para el enrutado 
+    import { link } from "svelte-spa-router";
+
   </script>
   
-  <!-- <style>
-    /* Navbar */
-    .navbar {
 
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      background-color: #9AE3D1;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      z-index: 1000;
-      padding: 10px 20px;
-    }
-  
-    .navbar .titulo-barra p {
-      color: white;
-      text-decoration: none;
-      font-size: large;
-    }
-  
-    .navbar .navegacion a {
-      text-decoration: none;
-      color: white;
-      margin: 0 20px;
-    }
-  
-    .navbar .navegacion a:hover {
-      text-decoration: underline;
-    }
-  
-    /* Tabla */
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 70px; /* Para que no quede debajo de la navbar fija */
-    }
-  
-    th, td {
-      border: 1px solid #d0a6f4;
-      padding: 12px;
-      text-align: center;
-    }
-  
-    th {
-      background-color: #d0a6f4;
-      color: white;
-    }
-  
-    td {
-      color: black;
-    }
-  
-    button {
-      padding: 5px 10px;
-      margin: 5px;
-      cursor: pointer;
-      border: none;
-      background-color: #d0a6f4;
-      color: white;
-      border-radius: 5px;
-    }
-  
-    button:hover {
-      background-color: #b080c6;
-    }
 
-  </style> -->
   <style>
     /* Navbar */
     .navbar {
@@ -219,10 +157,10 @@
       </div>
   
       <div class="navegacion">
-        <a href="#">Formulario Pedidos</a>
-        <a href="#">Pedidos</a>
-        <a href="#">Stock</a>
-        <a href="#">Inventario</a>
+        <a href="/formulario" use:link>Formulario Pedidos</a>
+        <a href="/pedidos" use:link>Pedidos</a>
+        <a href="/stock" use:link>Stock</a>
+        <a href="/inventario" use:link>Inventario</a>
       </div>
     </div>
   

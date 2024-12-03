@@ -6,10 +6,16 @@
   import Pedidos from './lib/Pedidos.svelte';
   import Stock from './lib/Stock.svelte';
   import Inventario from './lib/Inventario.svelte';
+
+  //IMPORTACION PARA LAS RUTAS
+  import Router from "svelte-spa-router";
+  import routes from "./routes";
 </script>
 
 <main>
-<Stock />
+  <Router {routes} />
+
+<!-- <Formulario /> -->
 </main>
 
 <style>
