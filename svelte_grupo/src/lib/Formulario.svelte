@@ -1,4 +1,9 @@
 <script>
+
+    //para el enrutado 
+    import { link } from "svelte-spa-router";
+
+
     // Se definen variables vacías que van a almacenar los valores de los campos del formulario
     let nombre = '';
     let apellido = '';
@@ -63,8 +68,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const iconoCerrar = document.getElementById('icono-cerrar');
     const navegacion = document.getElementById('navegacion');
 
-//para el enrutado 
-import { link } from "svelte-spa-router";
+
 
     // Función para abrir el menú
     iconoMenu.addEventListener('click', () => {
@@ -79,6 +83,8 @@ import { link } from "svelte-spa-router";
         iconoMenu.style.display = 'block';  // Mostrar el icono de abrir
         iconoCerrar.style.display = 'none'; // Ocultar el icono de cerrar
     });
+
+
 });
 
 
@@ -281,10 +287,10 @@ import { link } from "svelte-spa-router";
     </div>
 
     <div class="navegacion">
-        <a href="#">Formulario Pedidos</a>
-        <a href="#">Pedidos</a>
-        <a href="#">Stock</a>
-        <a href="#">Inventario</a>
+        <a href="/formulario" use:link>Formulario Pedidos</a>
+        <a href="/pedidos" use:link>Pedidos</a>
+        <a href="/stock" use:link>Stock</a>
+        <a href="/inventario" use:link>Inventario</a>
     </div>
 
 </div>

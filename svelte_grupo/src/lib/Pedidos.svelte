@@ -24,6 +24,7 @@
         obtenerPedidos(); // Llamada a la API para obtener los pedidos
     });
 
+    //para el enrutado
     import { link } from "svelte-spa-router";
 </script>
 
