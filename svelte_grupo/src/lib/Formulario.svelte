@@ -1,4 +1,9 @@
 <script>
+
+    //para el enrutado 
+    import { link } from "svelte-spa-router";
+
+
     // Se definen variables vacías que van a almacenar los valores de los campos del formulario
     let nombre = '';
     let apellido = '';
@@ -57,121 +62,57 @@
         alert('Error al conectar con el servidor');
     }
 }
+document.addEventListener('DOMContentLoaded', function() {
+    // Obtener los elementos por su id
+    const iconoMenu = document.getElementById('icono-menu');
+    const iconoCerrar = document.getElementById('icono-cerrar');
+    const navegacion = document.getElementById('navegacion');
+
+
+
+    // Función para abrir el menú
+    iconoMenu.addEventListener('click', () => {
+        navegacion.style.display = 'flex';  // Mostrar la barra de navegación
+        iconoMenu.style.display = 'none';   // Ocultar el icono de abrir
+        iconoCerrar.style.display = 'block'; // Mostrar el icono de cerrar
+    });
+
+    // Función para cerrar el menú
+    iconoCerrar.addEventListener('click', () => {
+        navegacion.style.display = 'none';  // Ocultar la barra de navegación
+        iconoMenu.style.display = 'block';  // Mostrar el icono de abrir
+        iconoCerrar.style.display = 'none'; // Ocultar el icono de cerrar
+    });
+
+
+});
+
 
 </script>
 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
-
-<style>
-
-
-
-    .navbar {
-        position: fixed;
-        top: 0%;
-        left: 0%;
-        width: 100%;
-        background-color: #FF5E5B;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        z-index: 1000;
-    }
-
-    .navbar .titulo-barra p {
-        color: white;
-        text-decoration: none;
-        margin-left: 30%;
-        border: 2px solid #FF5E5B;
-        width: 98%;
-        font-size: large;
-    }
-
-    .navbar .navegacion a {
-        text-decoration: none;
-        color: white;
-        margin: 0 20px;
-    }
-
-    .navbar .navegacion a:hover {
-        text-decoration: underline;
-        color: #84DCC6;
-    }
-
-    .contenedor-formulario .titulo-formulario h1 {
-        margin-top: 10% ;
-        text-align: center;
-    }
-
-    .contenedor-formulario {
-        max-width: 600px;
-        margin-top: 13%;
-        padding: 20px;
-        background-color: #F4F4F4; 
-        border-radius: 8px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    }
-
-    h1 {
-        color: #FF5E5B;
-        text-align: center;
-        margin-bottom: 20px;
-    }
-
-    .formulario {
-        margin-bottom: 15px;
-    }
-
-    .formulario label {
-        display: block;
-        margin-bottom: 5px;
-        margin-top: 2.5%;
-        font-weight: bold;
-        color: #166534; 
-    
-    }
-
-    .formulario input, .formulario select {
-        width: 100%;
-        padding: 8px;
-        border: 1px solid #ddd;
-        border-radius: 4px;
-    }
-
-    .formulario input:focus, .formulario select:focus {
-        outline: none;
-        border-color: #84DCC6; 
-        box-shadow: 0 0 5px #84DCC6;
-    }
-
-    button {
-        background-color: #84DCC6;
-        color: white;
-        padding: 10px 15px;
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
-        font-weight: bold;
-        margin-top: 2.5%;
-    }
-
-    button:hover {
-      background-color: #66B8A3; 
-    }
-
-</style>
+<link rel="stylesheet" href="css/formulario.css">
 
 <div class="navbar">
-
+<div class="navbar-contraido">
+    <div class="icono-menu"  id="icono-menu">
+        <i class="fa fa-bars"></i> 
+    </div>
     <div class="titulo-barra">
         <p>Gestión de Inventario</p>
     </div>
+    
+</div>
+    <div class="icono-cerrar"  id="icono-cerrar" >
+        <i class="fa fa-times"></i> 
+    </div>
 
     <div class="navegacion">
-        <a href="#">Formulario Pedidos</a>
-        <a href="#">Pedidos</a>
-        <a href="#">Stock</a>
-        <a href="#">Inventario</a>
+        <a href="/formulario" use:link>Formulario Pedidos</a>
+        <a href="/pedidos" use:link>Pedidos</a>
+        <a href="/stock" use:link>Stock</a>
+        <a href="/inventario" use:link>Inventario</a>
     </div>
 
 </div>
@@ -202,6 +143,15 @@
                 <option value="Pantalon Slim Fit">Pantalon Slim Fit</option>
                 <option value="Camiseta Basica">Camiseta Basica</option>
                 <option value="Sudadera con Capucha">Sudadera con Capucha</option>
+                <option value="Pantalón Jogger">Pantalón Jogger</option>
+                <option value="Camiseta Gráfica">Camiseta Gráfica</option>
+                <option value="Sudadera Oversize">Sudadera Oversize</option>
+                <option value="Zapatillas Running">Zapatillas Running</option>
+                <option value="Reloj Digital">Reloj Digital</option>
+                <option value="Mochila de Senderismo">Mochila de Senderismo</option>
+                <option value="Chaqueta Impermeable">Chaqueta Impermeable</option>
+                <option value="Auriculares Inalámbricos">Auriculares Inalámbricos</option>
+                <option value="Gafas de Sol UV400<">Gafas de Sol UV400</option>
             </select>
     
             <!-- Cantidad -->
