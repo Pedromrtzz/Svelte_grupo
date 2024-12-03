@@ -6,7 +6,7 @@
 
     async function obtenerPedidos() {
     try {
-        const respuesta = await fetch('http://localhost:3000/api/pedidos');
+        const respuesta = await fetch('http://localhost:3000/api/pedidos/obtener');
         console.log('Respuesta:', respuesta);  // Agrega esto para revisar la respuesta
         if (respuesta.ok) {
             const data = await respuesta.json();

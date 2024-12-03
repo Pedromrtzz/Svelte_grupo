@@ -27,35 +27,71 @@ db.connect((err) => {
   console.log('Conectado a la base de datos');
 });
 
-// Ruta para guardar pedidos
-app.post('/api/pedidos', (req, res) => {
+// Ruta para guardar pedidos y actualizar stock
+app.post('/api/pedido', (req, res) => {
     const { nombre, apellidos, correo, producto, cantidad } = req.body;
-
-    const sql = 'INSERT INTO pedidos (nombre, apellidos, correo, producto, cantidad) VALUES (?, ?, ?, ?, ?)';
-    db.query(sql, [nombre, apellidos, correo, producto, cantidad], (err, result) => {
+  
+    // Comenzamos una transacción para asegurar consistencia entre el pedido y el stock
+    db.beginTransaction((err) => {
+      if (err) {
+        console.error('Error iniciando la transacción:', err);
+        res.status(500).send('Error al procesar el pedido');
+        return;
+      }
+  
+      // Insertar el pedido en la tabla pedidos
+      const insertPedidoSql = 'INSERT INTO pedidos (nombre, apellidos, correo, producto, cantidad) VALUES (?, ?, ?, ?, ?)';
+      db.query(insertPedidoSql, [nombre, apellidos, correo, producto, cantidad], (err) => {
         if (err) {
-            console.error('Error ejecutando la consulta:', err);
+          console.error('Error al insertar el pedido:', err);
+          db.rollback(() => {
             res.status(500).send('Error al guardar el pedido');
-            return;
+          });
+          return;
         }
-        res.status(200).send('Pedido guardado exitosamente');
+  
+        // Actualizar el stock del producto
+        const updateStockSql = 'UPDATE productos SET cantidad_stock = cantidad_stock - ? WHERE nombre_producto = ? AND cantidad_stock >= ?';
+        db.query(updateStockSql, [cantidad, producto, cantidad], (err) => {
+          if (err) {
+            console.error('Error al actualizar el stock:', err);
+            db.rollback(() => {
+              res.status(500).send('Stock insuficiente o error al actualizar el stock');
+            });
+            return;
+          }
+  
+          // Si todo va bien, confirmamos la transacción
+          db.commit((err) => {
+            if (err) {
+              console.error('Error al confirmar la transacción:', err);
+              db.rollback(() => {
+                res.status(500).send('Error al procesar el pedido');
+              });
+              return;
+            }
+  
+            res.status(200).send('Pedido guardado y stock actualizado exitosamente');
+          });
+        });
+      });
     });
-});
+  });
+  
 
 
 // Ruta para obtener pedidos
-app.get('/api/pedidos', (req, res) => {
-    const sql = 'SELECT * FROM pedidos';
-    db.query(sql, (err, result) => {
-        if (err) {
-            console.error('Error ejecutando la consulta:', err.message);
-            res.status(500).send('Error al obtener los pedidos');
-            return;
-        }
-        res.status(200).json(result);
-    });
+app.get('/api/pedidos/obtener', (req, res) => {
+  const sql = 'SELECT * FROM pedidos';
+  db.query(sql, (err, result) => {
+      if (err) {
+          console.error('Error ejecutando la consulta:', err.message);
+          res.status(500).send('Error al obtener los pedidos');
+          return;
+      }
+      res.status(200).json(result);
+  });
 });
-
 
 
 // Ruta para obtener productos

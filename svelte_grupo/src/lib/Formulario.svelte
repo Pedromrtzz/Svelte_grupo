@@ -34,10 +34,11 @@
         producto, 
         cantidad // Agrega la cantidad al objeto
     };
+    
 
     try {
         // Se hace una petición POST a la API
-        const respuesta = await fetch('http://localhost:3000/api/pedidos', {
+        const respuesta = await fetch('http://localhost:3000/api/pedido', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -151,7 +152,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 <option value="Mochila de Senderismo">Mochila de Senderismo</option>
                 <option value="Chaqueta Impermeable">Chaqueta Impermeable</option>
                 <option value="Auriculares Inalámbricos">Auriculares Inalámbricos</option>
-                <option value="Gafas de Sol UV400<">Gafas de Sol UV400</option>
+                <option value="Gafas de Sol UV400">Gafas de Sol UV400</option>
             </select>
     
             <!-- Cantidad -->
