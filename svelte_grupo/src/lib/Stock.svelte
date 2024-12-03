@@ -1,5 +1,6 @@
 <script>
     import { onMount } from 'svelte';
+    import ExcelJS from 'exceljs';
   
     let productos = [];
     let detallesProducto = null;
@@ -38,6 +39,30 @@
 
     //para el enrutado
     import { link } from "svelte-spa-router";
+        // Función para exportar productos a Excel
+        async function exportarExcel() {
+        const workbook = new ExcelJS.Workbook();
+        const worksheet = workbook.addWorksheet('Productos');
+
+        // Definir columnas
+        worksheet.columns = [
+            { header: 'Producto', key: 'nombre_producto', width: 20 },
+            { header: 'Descripción', key: 'descripcion', width: 30 },
+            { header: 'Precio', key: 'precio', width: 15 },
+            { header: 'Stock', key: 'cantidad_stock', width: 10 },
+        ];
+
+        // Agregar filas con datos
+        productos.forEach(producto => worksheet.addRow(producto));
+
+        // Generar archivo Excel
+        const buffer = await workbook.xlsx.writeBuffer();
+        const blob = new Blob([buffer], { type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' });
+        const enlace = document.createElement('a');
+        enlace.href = URL.createObjectURL(blob);
+        enlace.download = 'productos.xlsx';
+        enlace.click();
+    }
   </script>
   
   
@@ -70,7 +95,7 @@
       </div>
     {/each}
   </div>
-  
+  <button class="btn-exportar" on:click={exportarExcel}>Exportar a Excel</button>
   <!-- Ventana Emergente -->
   {#if mostrarVentanaEmergente && detallesProducto}
     <div class="ventanaEmergente" on:click={manejarClickFondo}>
