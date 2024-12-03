@@ -67,88 +67,10 @@
     import { link } from "svelte-spa-router";
 
   </script>
-  
 
+ 
 
-  <style>
-    /* Navbar */
-    .navbar {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      background-color: #FF5E5B;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      z-index: 1000;
-      padding: 10px 20px;
-    }
-
-    .navbar .titulo-barra p {
-      color: white;
-      text-decoration: none;
-      font-size: large;
-    }
-
-    .navbar .navegacion a {
-      text-decoration: none;
-      color: white;
-      margin: 0 20px;
-    }
-
-    .navbar .navegacion a:hover {
-      text-decoration: underline;
-    }
-
-    /* Tabla */
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 70px; /*Para que no quede debajo de la navbar fija */
-    }
-
-    th {
-        padding: 8px;
-        border: 1px solid #9AE3D1; 
-        text-align: left;
-        background-color: #9AE3D1; 
-        color: white;
-    }
-
-    td {
-        padding: 8px;
-        color: #333333; 
-        text-align: left;
-        border: 1px solid #9AE3D1; 
-    }
-    tr:nth-child(even) {
-        background-color: #F4F4F4;
-    }
-
-    tr:hover {
-        background-color: #FFDD7F; 
-        color: #333333;
-    }
-
-    button {
-        background-color: #9AE3D1; 
-        color: #FFFFFF; 
-        border: none;
-        padding: 10px 15px;
-        border-radius: 5px;
-        cursor: pointer;
-        font-weight: bold;
-        transition: background-color 0.3s, transform 0.2s;
-    }
-
-    button:hover {
-        background-color: #E63946; 
-        transform: scale(1.05); 
-    }
-  </style> 
-
-  
+  <link rel="stylesheet" href="css/inventario.css">
   <div>
     <!-- Navbar -->
     <div class="navbar">
