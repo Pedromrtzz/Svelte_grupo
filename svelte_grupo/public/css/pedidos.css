@@ -66,6 +66,29 @@ tr:hover {
 }
 
 
+    .btn-exportar {
+        background-color: #9AE3D1; /* Verde */
+        color: white; /* Texto en blanco */
+        padding: 10px 20px; /* Espaciado interno */
+        font-size: 16px; /* Tamaño de fuente */
+        border: none; /* Sin borde */
+        border-radius: 5px; /* Bordes redondeados */
+        cursor: pointer; /* Cambiar el cursor al pasar por encima */
+        transition: background-color 0.3s ease; /* Animación de cambio de color */
+    }
 
+    .btn-exportar:hover {
+        background-color: #FFDD7F; /* Verde más oscuro al pasar el mouse */
+    }
+
+    .btn-exportar:active {
+        background-color: #527f74; /* Verde más oscuro al hacer clic */
+        transform: scale(0.98); /* Efecto de "presionar" */
+    }
+
+    .contenedor-pedidos button {
+        margin-top: 20px; /* Espacio superior para el botón */
+        display: inline-block;
+    }
 
     
