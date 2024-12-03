@@ -151,7 +151,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 <option value="Mochila de Senderismo">Mochila de Senderismo</option>
                 <option value="Chaqueta Impermeable">Chaqueta Impermeable</option>
                 <option value="Auriculares Inalámbricos">Auriculares Inalámbricos</option>
-                <option value="Gafas de Sol UV400<">Gafas de Sol UV400</option>
+                <option value="Gafas de Sol UV400">Gafas de Sol UV400</option>
             </select>
     
             <!-- Cantidad -->
