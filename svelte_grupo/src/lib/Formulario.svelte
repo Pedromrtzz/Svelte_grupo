@@ -63,6 +63,9 @@ document.addEventListener('DOMContentLoaded', function() {
     const iconoCerrar = document.getElementById('icono-cerrar');
     const navegacion = document.getElementById('navegacion');
 
+//para el enrutado 
+import { link } from "svelte-spa-router";
+
     // Función para abrir el menú
     iconoMenu.addEventListener('click', () => {
         navegacion.style.display = 'flex';  // Mostrar la barra de navegación
@@ -277,8 +280,7 @@ document.addEventListener('DOMContentLoaded', function() {
         <i class="fa fa-times"></i> 
     </div>
 
-    <div class="navegacion"id="navegacion">
-        
+    <div class="navegacion">
         <a href="#">Formulario Pedidos</a>
         <a href="#">Pedidos</a>
         <a href="#">Stock</a>

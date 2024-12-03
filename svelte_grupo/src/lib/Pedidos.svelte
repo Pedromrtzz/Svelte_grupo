@@ -23,6 +23,8 @@
     onMount(() => {
         obtenerPedidos(); // Llamada a la API para obtener los pedidos
     });
+
+    import { link } from "svelte-spa-router";
 </script>
 
 <style>
@@ -105,10 +107,10 @@ tr:hover {
     </div>
 
     <div class="navegacion">
-        <a href="#">Formulario Pedidos</a>
-        <a href="#">Pedidos</a>
-        <a href="#">Stock</a>
-        <a href="#">Inventario</a>
+        <a href="/formulario" use:link>Formulario Pedidos</a>
+        <a href="/pedidos" use:link>Pedidos</a>
+        <a href="/stock" use:link>Stock</a>
+        <a href="/inventario" use:link>Inventario</a>
         
     </div>
 
