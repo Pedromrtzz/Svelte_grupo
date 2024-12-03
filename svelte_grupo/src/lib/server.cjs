@@ -28,7 +28,7 @@ db.connect((err) => {
 });
 
 // Ruta para guardar pedidos y actualizar stock
-app.post('/api/pedidos', (req, res) => {
+app.post('/api/pedido', (req, res) => {
     const { nombre, apellidos, correo, producto, cantidad } = req.body;
   
     // Comenzamos una transacción para asegurar consistencia entre el pedido y el stock
