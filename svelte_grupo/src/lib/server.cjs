@@ -80,7 +80,18 @@ app.post('/api/pedidos', (req, res) => {
   
 
 
-
+// Ruta para obtener pedidos
+app.get('/api/pedidos/obtener', (req, res) => {
+  const sql = 'SELECT * FROM pedidos';
+  db.query(sql, (err, result) => {
+      if (err) {
+          console.error('Error ejecutando la consulta:', err.message);
+          res.status(500).send('Error al obtener los pedidos');
+          return;
+      }
+      res.status(200).json(result);
+  });
+});
 
 
 // Ruta para obtener productos
