@@ -1,5 +1,6 @@
 <script>
     import { onMount } from 'svelte';
+    import ExcelJS from 'exceljs';
     
     let productos = [];
   
@@ -66,6 +67,30 @@
     //para el enrutado 
     import { link } from "svelte-spa-router";
 
+    // Función para exportar productos a Excel
+    async function exportarExcel() {
+        const workbook = new ExcelJS.Workbook();
+        const worksheet = workbook.addWorksheet('Productos');
+
+        // Definir las columnas
+        worksheet.columns = [
+            { header: 'Producto', key: 'nombre_producto', width: 20 },
+            { header: 'Descripción', key: 'descripcion', width: 30 },
+            { header: 'Precio', key: 'precio', width: 15 },
+            { header: 'Stock', key: 'cantidad_stock', width: 10 },
+        ];
+
+        // Agregar filas con los datos
+        productos.forEach(producto => worksheet.addRow(producto));
+
+        // Generar el archivo Excel
+        const buffer = await workbook.xlsx.writeBuffer();
+        const blob = new Blob([buffer], { type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' });
+        const enlace = document.createElement('a');
+        enlace.href = URL.createObjectURL(blob);
+        enlace.download = 'productos.xlsx';
+        enlace.click();
+    }
   </script>
 
  
@@ -112,5 +137,6 @@
         {/each}
       </tbody>
     </table>
+    <button  class="btn-exportar" on:click={exportarExcel}>Exportar a Excel</button>
   </div>
   

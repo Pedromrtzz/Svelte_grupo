@@ -1,5 +1,6 @@
 <script>
     import { onMount } from 'svelte';
+    import ExcelJS from 'exceljs';
 
     // Variable reactiva para almacenar los pedidos
     let pedidos = [];
@@ -26,6 +27,31 @@
 
     //para el enrutado
     import { link } from "svelte-spa-router";
+
+    async function exportarExcel() {
+        const workbook = new ExcelJS.Workbook();
+        const worksheet = workbook.addWorksheet('Pedidos');
+
+        // Definir las columnas
+        worksheet.columns = [
+            { header: 'Nombre', key: 'nombre', width: 20 },
+            { header: 'Apellidos', key: 'apellidos', width: 20 },
+            { header: 'Correo', key: 'correo', width: 30 },
+            { header: 'Producto', key: 'producto', width: 20 },
+            { header: 'Cantidad', key: 'cantidad', width: 10 },
+        ];
+
+        // Agregar filas con los datos
+        pedidos.forEach(pedido => worksheet.addRow(pedido));
+
+        // Generar el archivo Excel
+        const buffer = await workbook.xlsx.writeBuffer();
+        const blob = new Blob([buffer], { type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' });
+        const enlace = document.createElement('a');
+        enlace.href = URL.createObjectURL(blob);
+        enlace.download = 'pedidos.xlsx';
+        enlace.click();
+    }
 </script>
 
 
@@ -74,6 +100,8 @@
                 {/each}
             </tbody>
         </table>
+
+        <button  class="btn-exportar" on:click={exportarExcel}>Exportar a Excel</button>
     {:else}
         <p>No hay pedidos disponibles</p>
     {/if}
