@@ -139,6 +139,26 @@ app.post('/api/productos/sumar', (req, res) => {
       res.status(200).send('Stock actualizado exitosamente');
     });
   });
+
+  // Ruta para actualizar un producto
+  app.post('/api/productos/actualizar', (req, res) => {
+    const { nombre_producto, descripcion, precio, cantidad_stock } = req.body;
+  
+    const sql = `
+      UPDATE productos 
+      SET descripcion = ?, precio = ?, cantidad_stock = ? 
+      WHERE nombre_producto = ?`;
+  
+    db.query(sql, [descripcion, precio, cantidad_stock, nombre_producto], (err, result) => {
+      if (err) {
+        console.error('Error al actualizar el producto:', err);
+        return res.status(500).send('Error al actualizar el producto');
+      }
+  
+      console.log('Producto actualizado:', result);
+      res.status(200).send('Producto actualizado exitosamente');
+    });
+  });
   
 app.listen(port, () => {
   console.log(`Servidor corriendo en http://localhost:${port}`);
