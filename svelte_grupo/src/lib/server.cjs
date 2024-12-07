@@ -14,7 +14,7 @@ app.use(bodyParser.json());
 const db = mysql.createConnection({
   host: 'localhost', // Cambiar si no usas localhost
   user: 'root', // Cambiar al usuario de tu base de datos
-  password: '', // Cambiar a la contraseña de tu base de datos
+  password: 'PEDRO2843', // Cambiar a la contraseña de tu base de datos
   database: 'svelte', // Cambiar al nombre de tu base de datos
   port: 3306
 });
@@ -137,6 +137,26 @@ app.post('/api/productos/sumar', (req, res) => {
         return;
       }
       res.status(200).send('Stock actualizado exitosamente');
+    });
+  });
+
+  // Ruta para actualizar un producto
+  app.post('/api/productos/actualizar', (req, res) => {
+    const { nombre_producto, descripcion, precio, cantidad_stock } = req.body;
+  
+    const sql = `
+      UPDATE productos 
+      SET descripcion = ?, precio = ?, cantidad_stock = ? 
+      WHERE nombre_producto = ?`;
+  
+    db.query(sql, [descripcion, precio, cantidad_stock, nombre_producto], (err, result) => {
+      if (err) {
+        console.error('Error al actualizar el producto:', err);
+        return res.status(500).send('Error al actualizar el producto');
+      }
+  
+      console.log('Producto actualizado:', result);
+      res.status(200).send('Producto actualizado exitosamente');
     });
   });
   
