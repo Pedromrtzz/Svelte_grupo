@@ -1,94 +1,118 @@
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #243447; /* Azul marino elegante */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Sutil sombra */
+}
 
-    .navbar {
-        position: fixed;
-        top: 0%;
-        left: 0%;
-        width: 100%;
-        background-color: #E63946; 
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        z-index: 1000;
-    }
+.navbar .titulo-barra p {
+    color: #E1E8ED; /* Blanco grisáceo */
+    text-decoration: none;
+    margin-left: 30%;
+    border: 2px solid #243447; /* Azul marino elegante */
+    width: 98%;
+    font-size: large;
+}
 
-    .navbar .titulo-barra p {
-        color: white;
-        text-decoration: none;
-        margin-left: 30%;
-        border: 2px solid #E63946; 
-        width: 98%;
-        font-size: large;
-    }
+.navbar .navegacion a {
+    text-decoration: none;
+    color: #E1E8ED; /* Blanco grisáceo */
+    margin: 0 20px;
+}
 
-    .navbar .navegacion a {
-        text-decoration: none;
-        color: white;
-        margin: 0 20px;
-    }
+.navbar .navegacion a:hover {
+    text-decoration: underline;
+    color: #88C0D0; /* Azul cielo suave */
+}
 
-    .navbar .navegacion a:hover {
-        text-decoration: underline;
-        color: #FFBE0B;
-    }
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #88C0D0; /* Azul cielo suave */
+}
 
-    table {
-        width: 100%;
-        border-collapse: collapse;
-        border: 1px solid #9AE3D1; 
-    }
+.contenedor-pedidos h1 {
+    color: #243447; /* Azul marino elegante */
+}
 
+th {
+    padding: 8px;
+    border: 1px solid #88C0D0; /* Azul cielo suave */
+    text-align: left;
+    background-color: #88C0D0; /* Azul cielo suave */
+    color: #E1E8ED; /* Blanco grisáceo */
+}
 
-    .contenedor-pedidos h1 {
-        color: #E63946;
-    }
+td {
+    padding: 8px;
+    color: #333333; /* Gris oscuro */
+    text-align: left;
+    border: 1px solid #88C0D0; /* Azul cielo suave */
+}
 
-    th {
-        padding: 8px;
-        border: 1px solid #9AE3D1; 
-        text-align: left;
-        background-color: #9AE3D1; 
-        color: white;
-    }
-
-    td {
-        padding: 8px;
-        color: #333333; 
-        text-align: left;
-        border: 1px solid #9AE3D1; 
-    }
-    tr:nth-child(even) {
-        background-color: #F4F4F4;
-    }
+tr:nth-child(even) {
+    background-color: #E6E6E6; /* Gris claro */
+}
 
 tr:hover {
-  background-color: #FFDD7F; 
-  color: #333333;
+    background-color: #88C0D050; /* Azul cielo suave */
+    color: #333333; /* Gris oscuro */
+}
+
+.btn-exportar {
+    background-color: #4C566A; /* Gris oscuro */
+    color: #ECEFF4; /* Blanco frío */
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-exportar:hover {
+    background-color: #88C0D0; /* Azul cielo suave */
+}
+
+.btn-exportar:active {
+    background-color: #4C566A; /* Gris oscuro */
+    transform: scale(0.98);
+}
+
+.contenedor-pedidos button {
+    margin-top: 20px;
+    display: inline-block;
+}
+
+/* Encabezado de totales */
+h2 {
+    color: #243447; /* Azul marino elegante */
+    font-size: 1.5em;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+/* Lista de totales */
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 1em;
+}
+
+ul li {
+    padding: 8px;
+    margin: 5px 0;
+    color: #333333; /* Gris oscuro */
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
 }
 
 
-    .btn-exportar {
-        background-color: #9AE3D1; /* Verde */
-        color: white; /* Texto en blanco */
-        padding: 10px 20px; /* Espaciado interno */
-        font-size: 16px; /* Tamaño de fuente */
-        border: none; /* Sin borde */
-        border-radius: 5px; /* Bordes redondeados */
-        cursor: pointer; /* Cambiar el cursor al pasar por encima */
-        transition: background-color 0.3s ease; /* Animación de cambio de color */
-    }
-
-    .btn-exportar:hover {
-        background-color: #FFDD7F; /* Verde más oscuro al pasar el mouse */
-    }
-
-    .btn-exportar:active {
-        background-color: #527f74; /* Verde más oscuro al hacer clic */
-        transform: scale(0.98); /* Efecto de "presionar" */
-    }
-
-    .contenedor-pedidos button {
-        margin-top: 20px; /* Espacio superior para el botón */
-        display: inline-block;
-    }
-
-    
