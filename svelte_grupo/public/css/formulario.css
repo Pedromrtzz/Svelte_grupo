@@ -145,7 +145,7 @@
     }
 
     .formulario input, .formulario select {
-        width: calc(100% - 20px); /* Espaciado para evitar que toque los bordes */
+        width: calc(100% - 50px); /* Ajusta el espaciado para que no toque los bordes y sea más corto */
         padding: 8px;
         margin: 0 10px; /* Espacio a la derecha e izquierda */
         border: 1px solid #000000; /* Bordes negros */
@@ -153,6 +153,8 @@
         background-color: #e6e6e6; /* Gris claro */
         color: #000000; /* Texto negro */
     }
+    
+    
 
     .formulario input:focus, .formulario select:focus {
         outline: none;
