@@ -1,204 +1,199 @@
+  /* Estilo de la barra de navegación */
+  .navbar {
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    background-color: #243447; /* Azul marino elegante */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+  }
 
-   /* Estilo de la barra de navegación */
-.navbar {
-  position: fixed;
-  top: 0%;
-  left: 0%;
-  width: 100%;
-  background-color: #E63946; 
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  z-index: 1000;
-}
+  .navbar .titulo-barra p {
+      color: #E1E8ED; /* Blanco grisáceo */
+      text-decoration: none;
+      margin-left: 30%;
+      border: 2px solid #243447; 
+      width: 98%;
+      font-size: large;
+  }
 
-.navbar .titulo-barra p {
-    color: white;
+  .navbar .navegacion a {
+      text-decoration: none;
+      color: #E1E8ED; /* Blanco grisáceo */
+      margin: 0 20px;
+  }
+
+  .navbar .navegacion a:hover {
+      text-decoration: underline;
+      color: #88C0D0; /* Azul cielo suave */
+  }
+
+  /* Estilo del footer */
+  footer {
+    background-color: #d3d3d3; /* Gris claro */
+    color: #243447; /* Azul marino elegante */
+    padding: 20px;
+    text-align: center;
+  }
+
+  footer a {
+    color: #243447; /* Azul marino elegante */
     text-decoration: none;
-    margin-left: 30%;
-    border: 2px solid #E63946; 
-    width: 98%;
-    font-size: large;
-}
+    font-weight: bold;
+  }
 
-.navbar .navegacion a {
-    text-decoration: none;
-    color: white;
-    margin: 0 20px;
-}
+  footer a:hover {
+    color: #88C0D0; /* Azul cielo suave */
+  }
 
-.navbar .navegacion a:hover {
-    text-decoration: underline;
-    color: #FFBE0B;
-}
+  /* Estilo de tarjetas */
+  .contenedor-tarjetas {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+    margin-top: 5%;
+  }
 
-/* Estilo del footer */
-footer {
-  background-color: #D3D3D3; /* Gris carbón claro */
-  color: #E63946; /* Rojo cereza vibrante */
-  padding: 20px;
-  text-align: center;
-}
+  .tarjeta {
+    width: 300px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    background-color: #FFFFFF; /* Blanco nieve */
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
 
-footer a {
-  color: #E63946; /* Rojo cereza vibrante */
-  text-decoration: none;
-  font-weight: bold;
-}
+  .tarjeta:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  }
 
-footer a:hover {
-  color: #FFD166; /* Dorado metálico */
-}
+  .tarjeta img {
+    width: 100%;
+    object-fit: cover;
+  }
 
-/* Estilo de tarjetas */
-.contenedor-tarjetas {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 20px;
-  padding: 20px;
-  margin-top: 5%;
-}
+  .tarjeta h3 {
+    color: #243447; /* Azul marino elegante */
+    font-size: 1.5rem;
+    margin: 10px 0;
+  }
 
-.tarjeta {
-  width: 300px;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  text-align: center;
-  background-color: #FFFFFF; /* Blanco nieve */
-  transition: transform 0.3s, box-shadow 0.3s;
-}
+  .tarjeta p {
+    color: #555;
+    font-size: 1rem;
+    margin: 10px 15px;
+  }
 
-.tarjeta:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-}
+  .tarjeta button {
+    background-color: #4C566A; /* Gris oscuro */
+    color: #ECEFF4; /* Blanco frío */
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 15px;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.2s;
+  }
 
-.tarjeta img {
-  width: 100%;
-  object-fit: cover;
-}
+  .tarjeta button:hover {
+    background-color: #88C0D0; /* Azul cielo suave */
+    transform: scale(1.05); 
+  }
 
-.tarjeta h3 {
-  color: #E63946; /* Rojo cereza vibrante */
-  font-size: 1.5rem;
-  margin: 10px 0;
-}
+  /* Estilo de la ventana emergente */
+  .ventanaEmergente {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 3000;
+  }
 
-.tarjeta p {
-  color: #555;
-  font-size: 1rem;
-  margin: 10px 15px;
-}
+  .ventanaEmergente-contenido {
+    display: flex;
+    background-color: #FFFFFF;
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 600px;
+    max-height: 80%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    border: 3px solid #4C566A; /* Gris oscuro */
+    color: #000;
+    overflow-y: auto;
+    position: relative; 
+  }
+  .ventanaEmergente h2 {
+    color: #243447; /* Azul marino elegante */
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+  }
 
-.tarjeta button {
-  background-color: #9AE3D1; 
-  color: #FFFFFF; 
-  border: none;
-  padding: 10px 15px;
-  border-radius: 5px;
-  cursor: pointer;
-  margin-bottom: 15px;
-  font-weight: bold;
-  transition: background-color 0.3s, transform 0.2s;
-}
+  .ventanaEmergente p {
+    color: #555; 
+    font-size: 1rem;
+    margin-bottom: 10px;
+  }
 
-.tarjeta button:hover {
-  background-color: #E63946; 
-  transform: scale(1.05); 
-}
+  .ventanaEmergente button {
+    background-color: #4C566A; /* Gris oscuro */
+    color: #ECEFF4; /* Blanco frío */
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.2s;
+  }
 
-/* Estilo de la ventana emergente */
-.ventanaEmergente {
-  display: flex;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  justify-content: center;
-  align-items: center;
-  z-index: 3000;
-}
+  .ventanaEmergente button:hover {
+    background-color: #88C0D0; /* Azul cielo suave */
+    transform: scale(1.05); 
+  }
 
-.ventanaEmergente-contenido {
-  display: flex;
-  background-color: #FFFFFF;
-  padding: 20px;
-  border-radius: 10px;
-  width: 80%;
-  max-width: 600px;
-  max-height: 80%;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-  border: 3px solid #9AE3D1; 
-  color: #000;
-  overflow-y: auto;
-  position: relative; 
-}
-.ventanaEmergente h2 {
-  color: #E63946; 
-  font-size: 1.8rem;
-  margin-bottom: 15px;
-}
+  .ventanaEmergente-imagen img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px;
+  }
 
-.ventanaEmergente p {
-  color: #555; 
-  font-size: 1rem;
-  margin-bottom: 10px;
-}
+  .btn-exportar {
+    margin-top: 20px;;
+    background-color: #4C566A; /* Gris oscuro */
+    color: #ECEFF4; /* Blanco frío */
+    padding: 10px 20px; /* Espaciado interno */
+    font-size: 16px; /* Tamaño de fuente */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Bordes redondeados */
+    cursor: pointer; /* Cambiar el cursor al pasar por encima */
+    transition: background-color 0.3s ease; /* Animación de cambio de color */
+  }
 
-.ventanaEmergente button {
-  background-color: #9AE3D1; 
-  color: #FFFFFF; 
-  border: none;
-  padding: 10px 20px;
-  border-radius: 5px;
-  cursor: pointer;
-  font-weight: bold;
-  transition: background-color 0.3s, transform 0.2s;
-}
+  .btn-exportar:hover {
+    background-color: #88C0D0; /* Azul cielo suave */
+  }
 
-.ventanaEmergente button:hover {
-  background-color: #E63946; 
-  transform: scale(1.05); 
-}
+  .btn-exportar:active {
+    background-color: #243447; /* Azul marino elegante */
+    transform: scale(0.98); /* Efecto de "presionar" */
+  }
 
-.ventanaEmergente-imagen img {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-  border-radius: 8px;
-}
-
-.btn-exportar {
-  margin-top: 20px;;
-  background-color: #9AE3D1; /* Verde */
-  color: white; /* Texto en blanco */
-  padding: 10px 20px; /* Espaciado interno */
-  font-size: 16px; /* Tamaño de fuente */
-  border: none; /* Sin borde */
-  border-radius: 5px; /* Bordes redondeados */
-  cursor: pointer; /* Cambiar el cursor al pasar por encima */
-  transition: background-color 0.3s ease; /* Animación de cambio de color */
-}
-
-.btn-exportar:hover {
-  background-color: #FFDD7F; /* Verde más oscuro al pasar el mouse */
-}
-
-.btn-exportar:active {
-  background-color: #527f74; /* Verde más oscuro al hacer clic */
-  transform: scale(0.98); /* Efecto de "presionar" */
-}
-
-.contenedor-pedidos button {
-  margin-top: 20px; /* Espacio superior para el botón */
-  display: inline-block;
-}
-
-  
-
-  
+  .contenedor-pedidos button {
+    margin-top: 20px; /* Espacio superior para el botón */
+    display: inline-block;
+  }
