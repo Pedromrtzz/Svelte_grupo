@@ -75,7 +75,7 @@
             flex-direction: column;
             width: 100%;
             text-align: center;
-            background-color: #2E4053; /* Azul grisáceo oscuro */
+            /*background-color: #2E4053; /* Azul grisáceo oscuro */
             padding: 10px 0;
         }
 
@@ -86,10 +86,12 @@
         }
 
         .icono-menu {
-            display: block !important;
+            display: block ;
             font-size: 24px;
             width: 20px;
             height: 20px;
+            margin-left: 5%;
+            margin-bottom: 10px;
             color: #E1E8ED; /* Blanco grisáceo */
             cursor: pointer;
             z-index: 100;
@@ -100,8 +102,7 @@
             font-size: 24px;
             color: #E1E8ED; /* Blanco grisáceo */
             cursor: pointer;
-            margin-left: auto;
-            margin-right: 40px;
+            margin-left: 6%;
         }
 
         .navegacion.visible {

@@ -100,16 +100,17 @@ document.addEventListener('DOMContentLoaded', function() {
     <div class="icono-menu"  id="icono-menu">
         <i class="fa fa-bars"></i> 
     </div>
+    <div class="icono-cerrar"  id="icono-cerrar" >
+        <i class="fa fa-times"></i> 
+    </div>
     <div class="titulo-barra">
         <p>Gestión de Inventario</p>
     </div>
     
 </div>
-    <div class="icono-cerrar"  id="icono-cerrar" >
-        <i class="fa fa-times"></i> 
-    </div>
+    
 
-    <div class="navegacion">
+    <div class="navegacion" id="navegacion">
         <a href="/" use:link>Formulario Pedidos</a>
         <a href="/pedidos" use:link>Pedidos</a>
         <a href="/stock" use:link>Stock</a>
