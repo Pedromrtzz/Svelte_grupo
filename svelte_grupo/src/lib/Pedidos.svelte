@@ -1,38 +1,41 @@
 <script>
     import { onMount } from 'svelte';
     import ExcelJS from 'exceljs';
+    import { link } from 'svelte-spa-router';
 
-    // Variable reactiva para almacenar los pedidos
+    // Variables reactivas
     let pedidos = [];
+    let contadores = {}; // Almacena los totales por producto
 
     async function obtenerPedidos() {
-    try {
-        const respuesta = await fetch('http://localhost:3000/api/pedidos/obtener');
-        console.log('Respuesta:', respuesta);  // Agrega esto para revisar la respuesta
-        if (respuesta.ok) {
-            const data = await respuesta.json();
-            console.log('Pedidos:', data);  // Muestra los datos obtenidos
-            pedidos = data;  // Guardar los pedidos en la variable reactiva
-        } else {
-            console.error('Error al obtener los pedidos, respuesta no válida');
-        }
-    } catch (error) {
-        console.error('Error al conectar con el servidor', error);
-    }
-}
-    // Usamos onMount para llamar a la función cuando el componente se monta
-    onMount(() => {
-        obtenerPedidos(); // Llamada a la API para obtener los pedidos
-    });
+        try {
+            const respuesta = await fetch('http://localhost:3000/api/pedidos/obtener');
+            if (respuesta.ok) {
+                const data = await respuesta.json();
+                pedidos = data;
 
-    //para el enrutado
-    import { link } from "svelte-spa-router";
+                // Calcular contadores
+                actualizarContadores();
+            } else {
+                console.error('Error al obtener los pedidos, respuesta no válida');
+            }
+        } catch (error) {
+            console.error('Error al conectar con el servidor', error);
+        }
+    }
+
+    function actualizarContadores() {
+        // Inicializar los contadores en 0
+        contadores = {};
+        pedidos.forEach(pedido => {
+            contadores[pedido.producto] = (contadores[pedido.producto] || 0) + pedido.cantidad;
+        });
+    }
 
     async function exportarExcel() {
         const workbook = new ExcelJS.Workbook();
         const worksheet = workbook.addWorksheet('Pedidos');
 
-        // Definir las columnas
         worksheet.columns = [
             { header: 'Nombre', key: 'nombre', width: 20 },
             { header: 'Apellidos', key: 'apellidos', width: 20 },
@@ -41,10 +44,8 @@
             { header: 'Cantidad', key: 'cantidad', width: 10 },
         ];
 
-        // Agregar filas con los datos
         pedidos.forEach(pedido => worksheet.addRow(pedido));
 
-        // Generar el archivo Excel
         const buffer = await workbook.xlsx.writeBuffer();
         const blob = new Blob([buffer], { type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' });
         const enlace = document.createElement('a');
@@ -52,6 +53,11 @@
         enlace.download = 'pedidos.xlsx';
         enlace.click();
     }
+
+    // Llamada inicial
+    onMount(() => {
+        obtenerPedidos();
+    });
 </script>
 
 
@@ -75,8 +81,7 @@
 
 <div class="contenedor-pedidos">
     <h1>Lista de Pedidos</h1>
-    
-    <!-- Mostrar la tabla solo si hay pedidos -->
+
     {#if pedidos.length > 0}
         <table>
             <thead>
@@ -101,8 +106,15 @@
             </tbody>
         </table>
 
-        <button  class="btn-exportar" on:click={exportarExcel}>Exportar a Excel</button>
+        <button class="btn-exportar" on:click={exportarExcel}>Exportar a Excel</button>
     {:else}
         <p>No hay pedidos disponibles</p>
     {/if}
+
+    <h2>Totales por Producto</h2>
+    <ul>
+        {#each Object.keys(contadores) as producto}
+            <li>{producto}: {contadores[producto]} unidades</li>
+        {/each}
+    </ul>
 </div>

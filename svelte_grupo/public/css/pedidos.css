@@ -91,4 +91,35 @@ tr:hover {
         display: inline-block;
     }
 
-    
+    /* Estilo para el encabezado de los totales */
+    h2 {
+        color: #E63946; /* Rojo vibrante */
+        font-size: 1.5em;
+        margin-top: 20px;
+        margin-bottom: 10px;
+    }
+
+    /* Estilo para la lista de totales */
+    ul {
+        list-style: none; /* Sin viñetas */
+        padding: 0; /* Sin espacio interior */
+        margin: 0; /* Sin márgenes */
+        font-size: 1em;
+    }
+
+    /* Estilo para los elementos de la lista */
+    ul li {
+        padding: 8px; /* Espaciado interno */
+        margin: 5px 0; /* Margen superior e inferior */
+        color: #333333; /* Texto en blanco */
+        border-radius: 5px; /* Bordes redondeados */
+        font-weight: bold; /* Texto en negrita */
+        transition: background-color 0.3s ease; /* Transición al cambiar color */
+    }
+
+    /* Hover para los elementos de la lista */
+    ul li:hover {
+        color: #333333; /* Texto en gris oscuro */
+        cursor: pointer; /* Cambiar el cursor al pasar por encima */
+    }
+
