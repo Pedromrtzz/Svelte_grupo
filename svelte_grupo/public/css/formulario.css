@@ -1,133 +1,132 @@
-
     .navbar {
         position: fixed;
-        top: 0%;
-        left: 0%;
+        top: 0;
+        left: 0;
         width: 100%;
-        background-color: #E63946; 
+        background-color: #243447; /* Azul marino elegante */
         display: flex;
         justify-content: space-between;
         align-items: center;
         z-index: 1000;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Sutil sombra */
     }
 
     .navbar .titulo-barra p {
-        color: white;
+        color: #E1E8ED; /* Blanco grisáceo */
         text-decoration: none;
         margin-left: 30%;
-        border: 2px solid #E63946; 
+        border: 2px solid #243447; 
         width: 98%;
         font-size: large;
     }
 
     .navbar .navegacion a {
         text-decoration: none;
-        color: white;
+        color: #E1E8ED; /* Blanco grisáceo */
         margin: 0 20px;
     }
 
     .navbar .navegacion a:hover {
         text-decoration: underline;
-        color: #FFBE0B;
+        color: #88C0D0; /* Azul cielo suave */
     }
 
-    .icono-menu{
+    .icono-menu {
         display: none;
     }
-    .icono-cerrar{
+
+    .icono-cerrar {
         display: none;
     }
 
     @media (max-width: 768px) {
-    .navbar-contraido {
-        display: flex; /* Asegura que los elementos estén en fila */
-        flex-direction: row; /* Fila */
-        align-items: center; /* Alinea los elementos verticalmente en el centro */
-        justify-content: space-between; /* Asegura que el icono y el título estén separados */
-        width: 100%; /* Asegura que el contenedor ocupe todo el ancho */
-        padding: 10px; /* Espaciado alrededor */
+        .navbar-contraido {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            padding: 10px;
+        }
+
+        .navbar {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            width: 100%;
+            padding: 10px;
+        }
+
+        .navbar .titulo-barra {
+            width: auto;
+            text-align: center;
+            margin: 0;
+        }
+
+        .navbar .titulo-barra p {
+            margin: 0;
+            border: none;
+            font-size: large;
+        }
+
+        .navbar .navegacion {
+            display: none;
+            flex-direction: column;
+            width: 100%;
+            text-align: center;
+            background-color: #2E4053; /* Azul grisáceo oscuro */
+            padding: 10px 0;
+        }
+
+        .navbar .navegacion a {
+            display: block;
+            margin: 10px 0;
+            color: #E1E8ED; /* Blanco grisáceo */
+        }
+
+        .icono-menu {
+            display: block !important;
+            font-size: 24px;
+            width: 20px;
+            height: 20px;
+            color: #E1E8ED; /* Blanco grisáceo */
+            cursor: pointer;
+            z-index: 100;
+        }
+
+        .icono-cerrar {
+            display: none;
+            font-size: 24px;
+            color: #E1E8ED; /* Blanco grisáceo */
+            cursor: pointer;
+            margin-left: auto;
+            margin-right: 40px;
+        }
+
+        .navegacion.visible {
+            display: flex;
+        }
     }
-
-    .navbar {
-        display: flex; /* Cambiar la dirección a columna para apilar los elementos */
-        flex-direction: column; /* Los elementos dentro de .navbar estarán en columna */
-        align-items: center; /* Centra los elementos horizontalmente */
-        justify-content: flex-start; /* Asegura que los elementos estén alineados desde arriba */
-        width: 100%; /* Asegura que el menú ocupe todo el ancho */
-        padding: 10px;
-    }
-
-    .navbar .titulo-barra {
-        width: auto; /* El ancho del título se ajusta al contenido */
-        text-align: center; /* Centra el texto */
-        margin: 0;
-    }
-
-    .navbar .titulo-barra p {
-        margin: 0;
-        border: none;
-        font-size: large;
-    }
-
-    .navbar .navegacion {
-        display: none; /* Ocultar el menú inicialmente */
-        flex-direction: column; /* Los enlaces estarán en columna */
-        width: 100%;
-        text-align: center;
-        background-color: #FF5E5B;
-        padding: 10px 0;
-    }
-
-    .navbar .navegacion a {
-        display: block;
-        margin: 10px 0;
-        color: white;
-    }
-
-    .icono-menu {
-        display: block !important;
-        font-size: 24px;
-        width: 20px;
-        height: 20px;
-        color: white;
-        cursor: pointer;
-        z-index: 100;
-    }
-
-    .icono-cerrar {
-        display: none; /* El icono de cerrar está inicialmente oculto */
-        font-size: 24px;
-        color: white;
-        cursor: pointer;
-        margin-left: auto; /* Para mover el icono al extremo derecho */
-        margin-right: 40px; /* Asegura que esté a unos 20px del borde */
-    }
-
-    /* Mostrar la navegación cuando se le añade la clase 'visible' */
-    .navegacion.visible {
-        display: flex;
-    }
-}
-
-
-
 
     .contenedor-formulario .titulo-formulario h1 {
-        margin-top: 10% ;
+        margin-top: 10%;
         text-align: center;
+        color: #000000; /* Blanco grisáceo */
     }
 
     .contenedor-formulario {
         max-width: 600px;
-        margin: 100px auto -1; /* Añade un margen superior para evitar que el contenido se superponga con la barra */
         padding: 20px;
-        background-color: #F4F4F4; 
+        background-color: #d3d3d3; /* Gris claro */
+        border: 2px solid #000000; /* Bordes negros */
         border-radius: 8px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     }
 
+
     h1 {
-        color: #FF5E5B;
+        color: #000000; /* Azul cielo suave */
         text-align: center;
         margin-bottom: 20px;
     }
@@ -141,26 +140,28 @@
         margin-bottom: 5px;
         margin-top: 2.5%;
         font-weight: bold;
-        color: #166534; 
-    
+        color: #000000; /* Gris claro */
     }
 
     .formulario input, .formulario select {
-        width: 100%;
+        width: calc(100% - 20px); /* Espaciado para evitar que toque los bordes */
         padding: 8px;
-        border: 1px solid #ddd;
+        margin: 0 10px; /* Espacio a la derecha e izquierda */
+        border: 1px solid #000000; /* Bordes negros */
         border-radius: 4px;
+        background-color: #e6e6e6; /* Gris claro */
+        color: #000000; /* Texto negro */
     }
 
     .formulario input:focus, .formulario select:focus {
         outline: none;
-        border-color: #84DCC6; 
-        box-shadow: 0 0 5px #84DCC6;
+        border-color: #88C0D0; /* Azul cielo suave */
+        box-shadow: 0 0 5px #88C0D0;
     }
 
     button {
-        background-color: #84DCC6;
-        color: white;
+        background-color: #4C566A; /* Gris oscuro */
+        color: #ECEFF4; /* Blanco frío */
         padding: 10px 15px;
         border: none;
         border-radius: 4px;
@@ -170,6 +171,5 @@
     }
 
     button:hover {
-      background-color: #66B8A3; 
+        background-color: #5E81AC; /* Azul suave */
     }
-
