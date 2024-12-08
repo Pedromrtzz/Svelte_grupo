@@ -1,106 +1,108 @@
-
 /* Navbar */
 .navbar {
-  position: fixed;
-  top: 0%;
-  left: 0%;
-  width: 100%;
-  background-color: #E63946; 
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  z-index: 1000;
-}
-
-.navbar .titulo-barra p {
-    color: white;
-    text-decoration: none;
-    margin-left: 30%;
-    border: 2px solid #E63946; 
-    width: 98%;
-    font-size: large;
-}
-
-.navbar .navegacion a {
-    text-decoration: none;
-    color: white;
-    margin: 0 20px;
-}
-
-.navbar .navegacion a:hover {
-    text-decoration: underline;
-    color: #FFBE0B;
-}
-/* Tabla */
-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 70px; /*Para que no quede debajo de la navbar fija */
-}
-
-th {
-    padding: 8px;
-    border: 1px solid #9AE3D1; 
-    text-align: left;
-    background-color: #9AE3D1; 
-    color: white;
-}
-
-td {
-    padding: 8px;
-    color: #333333; 
-    text-align: left;
-    border: 1px solid #9AE3D1; 
-}
-tr:nth-child(even) {
-    background-color: #F4F4F4;
-}
-
-tr:hover {
-    background-color: #FFDD7F; 
-    color: #333333;
-}
-
-button {
-    background-color: #9AE3D1; 
-    color: #FFFFFF; 
-    border: none;
-    padding: 10px 15px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-weight: bold;
-    transition: background-color 0.3s, transform 0.2s;
-}
-
-button:hover {
-    background-color: #E63946; 
-    transform: scale(1.05); 
-}
-.btn-exportar {
-    margin-top: 20px;;
-    background-color: #9AE3D1; /* Verde */
-    color: white; /* Texto en blanco */
-    padding: 10px 20px; /* Espaciado interno */
-    font-size: 16px; /* Tamaño de fuente */
-    border: none; /* Sin borde */
-    border-radius: 5px; /* Bordes redondeados */
-    cursor: pointer; /* Cambiar el cursor al pasar por encima */
-    transition: background-color 0.3s ease; /* Animación de cambio de color */
-}
-
-.btn-exportar:hover {
-    background-color: #FFDD7F; /* Verde más oscuro al pasar el mouse */
-}
-
-.btn-exportar:active {
-    background-color: #527f74; /* Verde más oscuro al hacer clic */
-    transform: scale(0.98); /* Efecto de "presionar" */
-}
-
-.contenedor-pedidos button {
-    margin-top: 20px; /* Espacio superior para el botón */
-    display: inline-block;
-}
-
-
-
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    background-color: #243447; /* Azul marino elegante */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Sutil sombra */
+  }
+  
+  .navbar .titulo-barra p {
+      color: #E1E8ED; /* Blanco grisáceo */
+      text-decoration: none;
+      margin-left: 30%;
+      border: 2px solid #243447; 
+      width: 98%;
+      font-size: large;
+  }
+  
+  .navbar .navegacion a {
+      text-decoration: none;
+      color: #E1E8ED; /* Blanco grisáceo */
+      margin: 0 20px;
+  }
+  
+  .navbar .navegacion a:hover {
+      text-decoration: underline;
+      color: #88C0D0; /* Azul cielo suave */
+  }
+  
+  /* Tabla */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 70px; /*Para que no quede debajo de la navbar fija */
+  }
+  
+  th {
+      padding: 8px;
+      border: 1px solid #88C0D0; /* Azul cielo suave */
+      text-align: left;
+      background-color: #88C0D0; /* Azul cielo suave */
+      color: #E1E8ED; /* Blanco grisáceo */
+  }
+  
+  td {
+      padding: 8px;
+      color: #333333; 
+      text-align: left;
+      border: 1px solid #88C0D0; /* Azul cielo suave */
+  }
+  
+  tr:nth-child(even) {
+      background-color: #e6e6e6; /* Gris claro */
+  }
+  
+  tr:hover {
+      background-color: #88c0d050; /* Azul cielo suave */
+      color: #333333;
+  }
+  
+  button {
+      background-color: #4C566A; /* Gris oscuro */
+      color: #ECEFF4; /* Blanco frío */
+      border: none;
+      padding: 10px 15px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background-color 0.3s, transform 0.2s;
+      margin-top: 2.5%;
+  }
+  
+  button:hover {
+      background-color: #5E81AC; /* Azul suave */
+      transform: scale(1.05); 
+  }
+  
+  .btn-exportar {
+      margin-top: 20px;
+      background-color: #4C566A; /* Gris oscuro */
+      color: #ECEFF4; /* Blanco frío */
+      padding: 10px 20px; /* Espaciado interno */
+      font-size: 16px; /* Tamaño de fuente */
+      border: none; /* Sin borde */
+      border-radius: 5px; /* Bordes redondeados */
+      cursor: pointer; /* Cambiar el cursor al pasar por encima */
+      transition: background-color 0.3s ease; /* Animación de cambio de color */
+  }
+  
+  .btn-exportar:hover {
+      background-color: #88C0D0; /* Azul cielo suave */
+  }
+  
+  .btn-exportar:active {
+      background-color: #4C566A; /* Gris oscuro */
+      transform: scale(0.98); /* Efecto de "presionar" */
+  }
+  
+  .contenedor-pedidos button {
+      margin-top: 20px; /* Espacio superior para el botón */
+      display: inline-block;
+  }
+  

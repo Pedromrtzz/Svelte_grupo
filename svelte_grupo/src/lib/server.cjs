@@ -14,7 +14,7 @@ app.use(bodyParser.json());
 const db = mysql.createConnection({
   host: 'localhost', // Cambiar si no usas localhost
   user: 'root', // Cambiar al usuario de tu base de datos
-  password: 'PEDRO2843', // Cambiar a la contraseña de tu base de datos
+  password: '', // Cambiar a la contraseña de tu base de datos
   database: 'svelte', // Cambiar al nombre de tu base de datos
   port: 3306
 });
@@ -101,8 +101,8 @@ app.get('/api/pedidos/totales', (req, res) => {
   `;
   db.query(sql, (err, results) => {
       if (err) {
-          console.error('Error al obtener los totales:', err);
-          res.status(500).send('Error al obtener los totales');
+          console.error('Error al obtener los productos totales:', err);
+          res.status(500).send('Error al obtener los productos totales');
           return;
       }
       res.status(200).json(results);
