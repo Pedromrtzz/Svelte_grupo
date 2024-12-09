@@ -63,16 +63,53 @@
         enlace.download = 'productos.xlsx';
         enlace.click();
     }
+
+    document.addEventListener('DOMContentLoaded', function() {
+    // Obtener los elementos por su id
+    const iconoMenu = document.getElementById('icono-menu');
+    const iconoCerrar = document.getElementById('icono-cerrar');
+    const navegacion = document.getElementById('navegacion');
+
+
+
+    // Función para abrir el menú
+    iconoMenu.addEventListener('click', () => {
+        navegacion.style.display = 'flex';  // Mostrar la barra de navegación
+        iconoMenu.style.display = 'none';   // Ocultar el icono de abrir
+        iconoCerrar.style.display = 'block'; // Mostrar el icono de cerrar
+    });
+
+    // Función para cerrar el menú
+    iconoCerrar.addEventListener('click', () => {
+        navegacion.style.display = 'none';  // Ocultar la barra de navegación
+        iconoMenu.style.display = 'block';  // Mostrar el icono de abrir
+        iconoCerrar.style.display = 'none'; // Ocultar el icono de cerrar
+    });
+
+
+});
+
+
   </script>
   
-  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <link rel="stylesheet" href="css/stock.css">
   <div class="navbar">
-    <div class="titulo-barra">
-      <p>Gestión de Inventario</p>
+    <div class="navbar-contraido">
+        <div class="icono-menu"  id="icono-menu">
+            <i class="fa fa-bars"></i> 
+        </div>
+        <div class="icono-cerrar"  id="icono-cerrar" >
+            <i class="fa fa-times"></i> 
+        </div>
+        <div class="titulo-barra">
+            <p>Gestión de Inventario</p>
+        </div>
+        
     </div>
-  
-    <div class="navegacion">
+        
+    
+        <div class="navegacion" id="navegacion">
       <a href="/" use:link>Formulario Pedidos</a>
       <a href="/pedidos" use:link>Pedidos</a>
       <a href="/stock" use:link>Stock</a>
