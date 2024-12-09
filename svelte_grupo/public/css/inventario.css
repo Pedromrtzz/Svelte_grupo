@@ -1,19 +1,18 @@
-/* Navbar */
 .navbar {
     position: fixed;
     top: 0%;
     left: 0%;
     width: 100%;
-    background-color: #243447; /* Azul marino elegante */
+    background-color: #243447; 
     display: flex;
     justify-content: space-between;
     align-items: center;
     z-index: 1000;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Sutil sombra */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
   }
   
   .navbar .titulo-barra p {
-      color: #E1E8ED; /* Blanco grisáceo */
+      color: #E1E8ED; 
       text-decoration: none;
       margin-left: 30%;
       border: 2px solid #243447; 
@@ -23,49 +22,48 @@
   
   .navbar .navegacion a {
       text-decoration: none;
-      color: #E1E8ED; /* Blanco grisáceo */
+      color: #E1E8ED; 
       margin: 0 20px;
   }
   
   .navbar .navegacion a:hover {
       text-decoration: underline;
-      color: #88C0D0; /* Azul cielo suave */
+      color: #88C0D0; 
   }
   
-  /* Tabla */
   table {
     width: 100%;
     border-collapse: collapse;
-    margin-top: 70px; /*Para que no quede debajo de la navbar fija */
+    margin-top: 70px; 
   }
   
   th {
       padding: 8px;
-      border: 1px solid #88C0D0; /* Azul cielo suave */
+      border: 1px solid #88C0D0; 
       text-align: left;
-      background-color: #88C0D0; /* Azul cielo suave */
-      color: #E1E8ED; /* Blanco grisáceo */
+      background-color: #88C0D0; 
+      color: #E1E8ED; 
   }
   
   td {
       padding: 8px;
       color: #333333; 
       text-align: left;
-      border: 1px solid #88C0D0; /* Azul cielo suave */
+      border: 1px solid #88C0D0; 
   }
   
   tr:nth-child(even) {
-      background-color: #e6e6e6; /* Gris claro */
+      background-color: #e6e6e6; 
   }
   
   tr:hover {
-      background-color: #88c0d050; /* Azul cielo suave */
+      background-color: #88c0d050; 
       color: #333333;
   }
   
   button {
-      background-color: #4C566A; /* Gris oscuro */
-      color: #ECEFF4; /* Blanco frío */
+      background-color: #4C566A; 
+      color: #ECEFF4; 
       border: none;
       padding: 10px 15px;
       border-radius: 5px;
@@ -76,33 +74,33 @@
   }
   
   button:hover {
-      background-color: #5E81AC; /* Azul suave */
+      background-color: #5E81AC; 
       transform: scale(1.05); 
   }
   
   .btn-exportar {
       margin-top: 20px;
-      background-color: #4C566A; /* Gris oscuro */
-      color: #ECEFF4; /* Blanco frío */
-      padding: 10px 20px; /* Espaciado interno */
-      font-size: 16px; /* Tamaño de fuente */
-      border: none; /* Sin borde */
-      border-radius: 5px; /* Bordes redondeados */
-      cursor: pointer; /* Cambiar el cursor al pasar por encima */
-      transition: background-color 0.3s ease; /* Animación de cambio de color */
+      background-color: #4C566A; 
+      color: #ECEFF4; 
+      padding: 10px 20px; 
+      font-size: 16px; 
+      border: none;
+      border-radius: 5px; 
+      cursor: pointer; 
+      transition: background-color 0.3s ease; 
   }
   
   .btn-exportar:hover {
-      background-color: #88C0D0; /* Azul cielo suave */
+      background-color: #88C0D0; 
   }
   
   .btn-exportar:active {
-      background-color: #4C566A; /* Gris oscuro */
-      transform: scale(0.98); /* Efecto de "presionar" */
+      background-color: #4C566A; 
+      transform: scale(0.98); 
   }
   
   .contenedor-pedidos button {
-      margin-top: 20px; /* Espacio superior para el botón */
+      margin-top: 20px; 
       display: inline-block;
   }
   
@@ -151,14 +149,13 @@
         flex-direction: column;
         width: 100%;
         text-align: center;
-        /*background-color: #2E4053; /* Azul grisáceo oscuro */
         padding: 10px 0;
     }
 
     .navbar .navegacion a {
         display: block;
         margin: 10px 0;
-        color: #E1E8ED; /* Blanco grisáceo */
+        color: #E1E8ED; 
     }
 
     .icono-menu {
@@ -168,7 +165,7 @@
         height: 20px;
         margin-left: 5%;
         margin-bottom: 10px;
-        color: #E1E8ED; /* Blanco grisáceo */
+        color: #E1E8ED; 
         cursor: pointer;
         z-index: 100;
     }
@@ -176,7 +173,7 @@
     .icono-cerrar {
         display: none;
         font-size: 24px;
-        color: #E1E8ED; /* Blanco grisáceo */
+        color: #E1E8ED; 
         cursor: pointer;
         margin-left: 6%;
     }

@@ -174,27 +174,27 @@
 
   .btn-exportar {
     margin-top: 20px;;
-    background-color: #4C566A; /* Gris oscuro */
-    color: #ECEFF4; /* Blanco frío */
-    padding: 10px 20px; /* Espaciado interno */
-    font-size: 16px; /* Tamaño de fuente */
-    border: none; /* Sin borde */
-    border-radius: 5px; /* Bordes redondeados */
-    cursor: pointer; /* Cambiar el cursor al pasar por encima */
-    transition: background-color 0.3s ease; /* Animación de cambio de color */
+    background-color: #4C566A; 
+    color: #ECEFF4; 
+    padding: 10px 20px; 
+    font-size: 16px; 
+    border: none; 
+    border-radius: 5px; 
+    cursor: pointer; 
+    transition: background-color 0.3s ease; 
   }
 
   .btn-exportar:hover {
-    background-color: #88C0D0; /* Azul cielo suave */
+    background-color: #88C0D0; 
   }
 
   .btn-exportar:active {
-    background-color: #243447; /* Azul marino elegante */
-    transform: scale(0.98); /* Efecto de "presionar" */
+    background-color: #243447; 
+    transform: scale(0.98);
   }
 
   .contenedor-pedidos button {
-    margin-top: 20px; /* Espacio superior para el botón */
+    margin-top: 20px; 
     display: inline-block;
   }
 
@@ -243,14 +243,13 @@
         flex-direction: column;
         width: 100%;
         text-align: center;
-        /*background-color: #2E4053; /* Azul grisáceo oscuro */
         padding: 10px 0;
     }
 
     .navbar .navegacion a {
         display: block;
         margin: 10px 0;
-        color: #E1E8ED; /* Blanco grisáceo */
+        color: #E1E8ED; 
     }
 
     .icono-menu {
@@ -260,7 +259,7 @@
         height: 20px;
         margin-left: 5%;
         margin-bottom: 10px;
-        color: #E1E8ED; /* Blanco grisáceo */
+        color: #E1E8ED; 
         cursor: pointer;
         z-index: 100;
     }
@@ -268,7 +267,7 @@
     .icono-cerrar {
         display: none;
         font-size: 24px;
-        color: #E1E8ED; /* Blanco grisáceo */
+        color: #E1E8ED; 
         cursor: pointer;
         margin-left: 6%;
     }

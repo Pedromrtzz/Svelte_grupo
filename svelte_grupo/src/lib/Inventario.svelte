@@ -5,8 +5,8 @@
 
 
   let productos = [];
-  let productoEditando = null; // Producto que está siendo editado
-  let editForm = { descripcion: '', precio: '', cantidad_stock: '' }; // Formulario de edición
+  let productoEditando = null; 
+  let editForm = { descripcion: '', precio: '', cantidad_stock: '' };
 
   const sumarStock = async (nombre_producto, cantidad) => {
     const response = await fetch('http://localhost:3000/api/productos/sumar', {
@@ -41,7 +41,7 @@
   };
 
   const actualizarProducto = async () => {
-  console.log('Datos a actualizar:', editForm); // Verifica los datos que se envían
+  console.log('Datos a actualizar:', editForm);
 
   const response = await fetch('http://localhost:3000/api/productos/actualizar', {
     method: 'POST',
@@ -57,7 +57,7 @@
     await obtenerProductos();
   } else {
     const error = await response.text();
-    console.error('Error del servidor:', error); // Ver error detallado
+    console.error('Error del servidor:', error);
     alert('Error al actualizar el producto');
   }
 };
@@ -116,16 +116,16 @@
 
     // Función para abrir el menú
     iconoMenu.addEventListener('click', () => {
-        navegacion.style.display = 'flex';  // Mostrar la barra de navegación
-        iconoMenu.style.display = 'none';   // Ocultar el icono de abrir
-        iconoCerrar.style.display = 'block'; // Mostrar el icono de cerrar
+        navegacion.style.display = 'flex'; 
+        iconoMenu.style.display = 'none';   
+        iconoCerrar.style.display = 'block'; 
     });
 
     // Función para cerrar el menú
     iconoCerrar.addEventListener('click', () => {
-        navegacion.style.display = 'none';  // Ocultar la barra de navegación
-        iconoMenu.style.display = 'block';  // Mostrar el icono de abrir
-        iconoCerrar.style.display = 'none'; // Ocultar el icono de cerrar
+        navegacion.style.display = 'none';  
+        iconoMenu.style.display = 'block';  
+        iconoCerrar.style.display = 'none'; 
     });
 
 

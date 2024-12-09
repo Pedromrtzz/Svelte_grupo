@@ -1,43 +1,42 @@
 <script>
 
-    //para el enrutado 
+    //Para el enrutado 
     import { link } from "svelte-spa-router";
 
 
-    // Se definen variables vacías que van a almacenar los valores de los campos del formulario
+    //Definimos las variables vacías que van a almacenar los valores de los campos del formulario
     let nombre = '';
     let apellido = '';
     let correo = '';
-    let producto = 'Pantalon Slim Fit'; // Valor inicial del select (por defecto será 'pantalon')
+    let producto = 'Pantalon Slim Fit';
 
-    // Función asincrónica que se ejecuta al enviar el formulario
+    //Función asincrónica que se ejecuta al enviar el formulario
     async function enviarPedido() {
-    // Captura los elementos del formulario mediante sus identificadores
+    //Capturamos los elementos del formulario mediante sus identificadores
     const nombreElement = document.getElementById('nombre');
     const apellidoElement = document.getElementById('apellido');
     const correoElement = document.getElementById('correo');
     const productoElement = document.getElementById('productos');
-    const cantidadElement = document.getElementById('cantidad'); // Captura del campo cantidad
+    const cantidadElement = document.getElementById('cantidad');
 
-    // Verifica que los elementos sean del tipo esperado
+    //Verificamos que los elementos sean del tipo esperado
     const nombre = nombreElement instanceof HTMLInputElement ? nombreElement.value : '';
     const apellido = apellidoElement instanceof HTMLInputElement ? apellidoElement.value : '';
     const correo = correoElement instanceof HTMLInputElement ? correoElement.value : '';
     const producto = productoElement instanceof HTMLSelectElement ? productoElement.value : 'Pantalon Slim Fit';
     const cantidad = cantidadElement instanceof HTMLInputElement ? parseInt(cantidadElement.value, 10) : 1; // Convertir a entero
 
-    // Se crea un objeto con los datos obtenidos del formulario
+    //Creamos un objeto con los datos obtenidos del formulario
     const pedido = { 
         nombre, 
         apellidos: apellido, 
         correo, 
         producto, 
-        cantidad // Agrega la cantidad al objeto
+        cantidad
     };
     
 
     try {
-        // Se hace una petición POST a la API
         const respuesta = await fetch('http://localhost:3000/api/pedido', {
             method: 'POST',
             headers: {
@@ -46,10 +45,8 @@
             body: JSON.stringify(pedido),
         });
 
-        // Si la respuesta del servidor es satisfactoria
         if (respuesta.ok) {
             alert('Pedido realizado con éxito');
-            // Reinicia los campos del formulario
             if (nombreElement instanceof HTMLInputElement) nombreElement.value = '';
             if (apellidoElement instanceof HTMLInputElement) apellidoElement.value = '';
             if (correoElement instanceof HTMLInputElement) correoElement.value = '';
@@ -64,7 +61,6 @@
     }
 }
 document.addEventListener('DOMContentLoaded', function() {
-    // Obtener los elementos por su id
     const iconoMenu = document.getElementById('icono-menu');
     const iconoCerrar = document.getElementById('icono-cerrar');
     const navegacion = document.getElementById('navegacion');
@@ -73,16 +69,16 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Función para abrir el menú
     iconoMenu.addEventListener('click', () => {
-        navegacion.style.display = 'flex';  // Mostrar la barra de navegación
-        iconoMenu.style.display = 'none';   // Ocultar el icono de abrir
-        iconoCerrar.style.display = 'block'; // Mostrar el icono de cerrar
+        navegacion.style.display = 'flex'; 
+        iconoMenu.style.display = 'none'; 
+        iconoCerrar.style.display = 'block';
     });
 
     // Función para cerrar el menú
     iconoCerrar.addEventListener('click', () => {
-        navegacion.style.display = 'none';  // Ocultar la barra de navegación
-        iconoMenu.style.display = 'block';  // Mostrar el icono de abrir
-        iconoCerrar.style.display = 'none'; // Ocultar el icono de cerrar
+        navegacion.style.display = 'none';
+        iconoMenu.style.display = 'block';
+        iconoCerrar.style.display = 'none';
     });
 
 
