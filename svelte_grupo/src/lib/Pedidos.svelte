@@ -5,7 +5,7 @@
 
     // Variables reactivas
     let pedidos = [];
-    let contadores = {}; // Almacena los totales por producto
+    let contadores = {};
 
     async function obtenerPedidos() {
         try {
@@ -14,7 +14,6 @@
                 const data = await respuesta.json();
                 pedidos = data;
 
-                // Calcular contadores
                 actualizarContadores();
             } else {
                 console.error('Error al obtener los pedidos, respuesta no válida');
@@ -25,7 +24,6 @@
     }
 
     function actualizarContadores() {
-        // Inicializar los contadores en 0
         contadores = {};
         pedidos.forEach(pedido => {
             contadores[pedido.producto] = (contadores[pedido.producto] || 0) + pedido.cantidad;
@@ -60,25 +58,23 @@
     });
 
     document.addEventListener('DOMContentLoaded', function() {
-    // Obtener los elementos por su id
     const iconoMenu = document.getElementById('icono-menu');
     const iconoCerrar = document.getElementById('icono-cerrar');
     const navegacion = document.getElementById('navegacion');
 
 
-
     // Función para abrir el menú
     iconoMenu.addEventListener('click', () => {
-        navegacion.style.display = 'flex';  // Mostrar la barra de navegación
-        iconoMenu.style.display = 'none';   // Ocultar el icono de abrir
-        iconoCerrar.style.display = 'block'; // Mostrar el icono de cerrar
+        navegacion.style.display = 'flex';  
+        iconoMenu.style.display = 'none'; 
+        iconoCerrar.style.display = 'block';
     });
 
     // Función para cerrar el menú
     iconoCerrar.addEventListener('click', () => {
-        navegacion.style.display = 'none';  // Ocultar la barra de navegación
-        iconoMenu.style.display = 'block';  // Mostrar el icono de abrir
-        iconoCerrar.style.display = 'none'; // Ocultar el icono de cerrar
+        navegacion.style.display = 'none';
+        iconoMenu.style.display = 'block';
+        iconoCerrar.style.display = 'none';
     });
 
 
